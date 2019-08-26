@@ -14,12 +14,12 @@ public class ThreadPoolTest {
         // 开始时间
         long start = System.currentTimeMillis();
         List<String> list = new ArrayList<String>();
-
-        for (int i = 1; i <= 3000; i++) {
+        int total = 100;
+        for (int i = 1; i <= total; i++) {
             list.add(i + "");
         }
-        // 每500条数据开启一条线程
-        int threadSize = 500;
+        // 每20条数据开启一条线程
+        int threadSize = 20;
         // 总数据条数
         int dataSize = list.size();
         // 线程数
@@ -29,11 +29,12 @@ public class ThreadPoolTest {
 
         // 创建一个线程池
         ExecutorService exec = Executors.newFixedThreadPool(threadNum);
+        CountDownLatch countDownLatch = new CountDownLatch(threadNum);
         // 定义一个任务集合
         List<Callable<Integer>> tasks = new ArrayList<Callable<Integer>>();
         Callable<Integer> task = null;
         List<String> cutList = null;
-
+        long begaintime = System.currentTimeMillis();
         // 确定每条线程的数据
         for (int i = 0; i < threadNum; i++) {
             if (i == threadNum - 1) {
@@ -66,7 +67,14 @@ public class ThreadPoolTest {
 
         // 关闭线程池
         exec.shutdown();
+//
+//        try {
+//            countDownLatch.await();  //这一步是为了将全部线程任务执行完以后，开始执行后面的任务（计算时间，数量）
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//        long endTime = System.currentTimeMillis(); //结束时间
+//        System.out.println(total + " 个  接口请求总耗时 ： "+(endTime-begaintime)+"-----平均耗时为"+ ((endTime-begaintime)/total));
         System.out.println("线程任务执行结束");
-        System.err.println("执行任务消耗了 ：" + (System.currentTimeMillis() - start) + "毫秒");
     }
 }
