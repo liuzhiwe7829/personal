@@ -11,6 +11,7 @@ public class WeatherData extends Observable {
     private double temperature;
     private double humidity;
     private double pressure;
+
     public double getTemperature() {
         return temperature;
     }
@@ -34,9 +35,8 @@ public class WeatherData extends Observable {
         this.setChanged(); //java底层boolean设置变化
         notifyObservers(new Data(temperature, humidity, pressure));//推
         //观察者自己拉数据
-       // notifyObservers();
+        // notifyObservers();
     }
-
 
 
     public static class Data {
