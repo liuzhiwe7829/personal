@@ -1,4 +1,4 @@
-package designPattern.behavioral;
+package designPattern.behavioral.strategy;
 
 /**
  * @author zhiwei.liu003
