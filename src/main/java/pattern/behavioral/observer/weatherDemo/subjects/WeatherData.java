@@ -1,6 +1,6 @@
 package pattern.behavioral.observer.weatherDemo.subjects;
 
-import designPattern.behavioral.observer.weatherDemo.observers.Observer;
+import pattern.behavioral.observer.weatherDemo.observers.Observer;
 
 import java.util.ArrayList;
 

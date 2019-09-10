@@ -1,9 +1,9 @@
 package pattern.structure.adapter03;
 
-import designPattern.adapter02.HmJCooker;
-import designPattern.adapter02.ICooker;
-import designPattern.adapter02.IProgrammer;
-import designPattern.adapter02.JDProgrammer;
+import pattern.structure.adapter02.HmJCooker;
+import pattern.structure.adapter02.ICooker;
+import pattern.structure.adapter02.IProgrammer;
+import pattern.structure.adapter02.JDProgrammer;
 
 import java.util.ArrayList;
 import java.util.List;

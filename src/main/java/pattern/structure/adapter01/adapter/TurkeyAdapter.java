@@ -1,7 +1,7 @@
 package pattern.structure.adapter01.adapter;
 
-import designPattern.adapter01.duck.Duck;
-import designPattern.adapter01.turkey.Turkey;
+import pattern.structure.adapter01.duck.Duck;
+import pattern.structure.adapter01.turkey.Turkey;
 
 /**
  * @author zhiwei.liu003

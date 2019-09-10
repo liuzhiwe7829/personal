@@ -1,11 +1,11 @@
 package pattern.create.abstractFactory.computerDemo;
 
 
-import designPattern.create.abstractFactory.computerDemo.computer.Computer;
-import designPattern.create.abstractFactory.computerDemo.factory.AmdFactory;
-import designPattern.create.abstractFactory.computerDemo.factory.PCFactory;
-import designPattern.create.abstractFactory.computerDemo.product.CPU;
-import designPattern.create.abstractFactory.computerDemo.product.MainBoard;
+import pattern.create.abstractFactory.computerDemo.computer.Computer;
+import pattern.create.abstractFactory.computerDemo.factory.AmdFactory;
+import pattern.create.abstractFactory.computerDemo.factory.PCFactory;
+import pattern.create.abstractFactory.computerDemo.product.CPU;
+import pattern.create.abstractFactory.computerDemo.product.MainBoard;
 
 public class MyTest {
     public static void main(String[] args){

@@ -1,11 +1,12 @@
 package pattern.structure.adapter03;
 
-import designPattern.adapter02.ICooker;
 
 /**
  * @author zhiwei.liu003
  * @date 2019/9/715:43
  */
+
+import pattern.structure.adapter02.ICooker;
 
 /**
  * 厨师适配器

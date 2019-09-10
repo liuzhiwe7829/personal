@@ -1,7 +1,7 @@
 package pattern.create.abstractFactory.computerDemo.computer;
 
-import designPattern.create.abstractFactory.computerDemo.product.CPU;
-import designPattern.create.abstractFactory.computerDemo.product.MainBoard;
+import pattern.create.abstractFactory.computerDemo.product.CPU;
+import pattern.create.abstractFactory.computerDemo.product.MainBoard;
 
 /**
  * @author zhiwei.liu003

@@ -1,12 +1,12 @@
 package pattern.structure.adapter03;
 
-import designPattern.adapter02.ICooker;
-import designPattern.adapter02.IProgrammer;
 
 /**
  * @author zhiwei.liu003
  * @date 2019/9/715:43
  */
+
+import pattern.structure.adapter02.IProgrammer;
 
 /**
  * 程序员适配器

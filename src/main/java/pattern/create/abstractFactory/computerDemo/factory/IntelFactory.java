@@ -1,10 +1,10 @@
 package pattern.create.abstractFactory.computerDemo.factory;
 
 
-import designPattern.create.abstractFactory.computerDemo.product.CPU;
-import designPattern.create.abstractFactory.computerDemo.product.IntelCPU;
-import designPattern.create.abstractFactory.computerDemo.product.IntelMainBoard;
-import designPattern.create.abstractFactory.computerDemo.product.MainBoard;
+import pattern.create.abstractFactory.computerDemo.product.CPU;
+import pattern.create.abstractFactory.computerDemo.product.IntelCPU;
+import pattern.create.abstractFactory.computerDemo.product.IntelMainBoard;
+import pattern.create.abstractFactory.computerDemo.product.MainBoard;
 
 public class IntelFactory implements PCFactory {
 

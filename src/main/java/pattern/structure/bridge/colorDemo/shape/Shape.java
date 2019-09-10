@@ -1,6 +1,7 @@
 package pattern.structure.bridge.colorDemo.shape;
 
-import designPattern.structure.bridge.colorDemo.color.ColorAPI;
+
+import pattern.structure.bridge.colorDemo.color.ColorAPI;
 
 /**
  * @author zhiwei.liu003

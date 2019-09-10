@@ -1,8 +1,9 @@
 package pattern.behavioral.observer.weatherDemo;
 
-import designPattern.behavioral.observer.weatherDemo.observers.CurrentConditonDIsplay;
-import designPattern.behavioral.observer.weatherDemo.observers.TomorrowConditionDisplay;
-import designPattern.behavioral.observer.weatherDemo.subjects.WeatherData;
+
+import pattern.behavioral.observer.weatherDemo.observers.CurrentConditonDIsplay;
+import pattern.behavioral.observer.weatherDemo.observers.TomorrowConditionDisplay;
+import pattern.behavioral.observer.weatherDemo.subjects.WeatherData;
 
 /**
  * @author zhiwei.liu003

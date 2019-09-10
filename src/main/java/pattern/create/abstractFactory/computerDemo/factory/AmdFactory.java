@@ -1,10 +1,10 @@
 package pattern.create.abstractFactory.computerDemo.factory;
 
 
-import designPattern.create.abstractFactory.computerDemo.product.AmdCPU;
-import designPattern.create.abstractFactory.computerDemo.product.AmdMainBoard;
-import designPattern.create.abstractFactory.computerDemo.product.CPU;
-import designPattern.create.abstractFactory.computerDemo.product.MainBoard;
+import pattern.create.abstractFactory.computerDemo.product.AmdCPU;
+import pattern.create.abstractFactory.computerDemo.product.AmdMainBoard;
+import pattern.create.abstractFactory.computerDemo.product.CPU;
+import pattern.create.abstractFactory.computerDemo.product.MainBoard;
 
 public class AmdFactory implements PCFactory{
 

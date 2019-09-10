@@ -1,10 +1,11 @@
 package pattern.structure.bridge.colorDemo;
 
-import designPattern.structure.bridge.colorDemo.color.BluePen;
-import designPattern.structure.bridge.colorDemo.color.RedPen;
-import designPattern.structure.bridge.colorDemo.shape.Circle;
-import designPattern.structure.bridge.colorDemo.shape.Rectangle;
-import designPattern.structure.bridge.colorDemo.shape.Shape;
+
+import pattern.structure.bridge.colorDemo.color.BluePen;
+import pattern.structure.bridge.colorDemo.color.RedPen;
+import pattern.structure.bridge.colorDemo.shape.Circle;
+import pattern.structure.bridge.colorDemo.shape.Rectangle;
+import pattern.structure.bridge.colorDemo.shape.Shape;
 
 /**
  * @author zhiwei.liu003

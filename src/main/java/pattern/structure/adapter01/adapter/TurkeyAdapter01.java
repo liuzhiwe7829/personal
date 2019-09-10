@@ -1,8 +1,8 @@
 package pattern.structure.adapter01.adapter;
 
-import designPattern.adapter01.duck.Duck;
-import designPattern.adapter01.turkey.Turkey;
-import designPattern.adapter01.turkey.WildTurkey;
+import pattern.structure.adapter01.duck.Duck;
+import pattern.structure.adapter01.turkey.Turkey;
+import pattern.structure.adapter01.turkey.WildTurkey;
 
 /**
  * @author zhiwei.liu003
@@ -13,7 +13,7 @@ import designPattern.adapter01.turkey.WildTurkey;
  * 对象适配器
  * 表现为鸭子（目标target）,实质是火鸡（被适配者）
  */
-public class TurkeyAdapter01 extends WildTurkey implements Duck  {
+public class TurkeyAdapter01 extends WildTurkey implements Duck {
     private Turkey turkey ;//对象行必须要组合，被适配者，要有适配者的引用
 
     public TurkeyAdapter01(Turkey turkey){

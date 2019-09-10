@@ -1,6 +1,7 @@
 package pattern.structure.decorator.orderDemo.decorator;
 
-import designPattern.structure.decorator.orderDemo.compenent.Drink;
+
+import pattern.structure.decorator.orderDemo.compenent.Drink;
 
 /**
  * @author zhiwei.liu003

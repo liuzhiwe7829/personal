@@ -1,6 +1,7 @@
 package pattern.create.polymorphicFactory.factory;
 
-import designPattern.create.polymorphicFactory.products.Food;
+
+import pattern.create.polymorphicFactory.products.Food;
 
 /**
  * @author zhiwei.liu003

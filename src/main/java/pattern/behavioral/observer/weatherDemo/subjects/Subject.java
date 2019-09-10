@@ -5,7 +5,8 @@ package pattern.behavioral.observer.weatherDemo.subjects;
  * @date 2019/9/89:56
  */
 
-import designPattern.behavioral.observer.weatherDemo.observers.Observer;
+
+import pattern.behavioral.observer.weatherDemo.observers.Observer;
 
 /**
  * 被观察者接口

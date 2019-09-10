@@ -1,9 +1,8 @@
 package pattern.structure.decorator.orderDemo;
 
-import designPattern.structure.decorator.orderDemo.compenent.Drink;
-import designPattern.structure.decorator.orderDemo.concretecomponent.Decaf;
-import designPattern.structure.decorator.orderDemo.decorator.Choloclate;
-import designPattern.structure.decorator.orderDemo.decorator.Milk;
+import pattern.structure.decorator.orderDemo.compenent.Drink;
+import pattern.structure.decorator.orderDemo.concretecomponent.Decaf;
+import pattern.structure.decorator.orderDemo.decorator.Milk;
 
 /**
  * @author zhiwei.liu003

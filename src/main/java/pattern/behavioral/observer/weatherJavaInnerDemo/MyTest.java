@@ -1,8 +1,8 @@
 package pattern.behavioral.observer.weatherJavaInnerDemo;
 
-import designPattern.behavioral.observer.weatherJavaInnerDemo.observers.CurrentConditionDisplay;
-import designPattern.behavioral.observer.weatherJavaInnerDemo.observers.TomorrowConditionDisplay;
-import designPattern.behavioral.observer.weatherJavaInnerDemo.subjects.WeatherData;
+import pattern.behavioral.observer.weatherJavaInnerDemo.observers.CurrentConditionDisplay;
+import pattern.behavioral.observer.weatherJavaInnerDemo.observers.TomorrowConditionDisplay;
+import pattern.behavioral.observer.weatherJavaInnerDemo.subjects.WeatherData;
 
 /**
  * @author zhiwei.liu003

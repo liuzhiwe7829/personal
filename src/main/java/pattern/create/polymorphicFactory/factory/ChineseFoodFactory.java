@@ -1,8 +1,9 @@
 package pattern.create.polymorphicFactory.factory;
 
-import designPattern.create.polymorphicFactory.products.ChineseFoodA;
-import designPattern.create.polymorphicFactory.products.ChineseFoodB;
-import designPattern.create.polymorphicFactory.products.Food;
+
+import pattern.create.polymorphicFactory.products.ChineseFoodA;
+import pattern.create.polymorphicFactory.products.ChineseFoodB;
+import pattern.create.polymorphicFactory.products.Food;
 
 /**
  * @author zhiwei.liu003

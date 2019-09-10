@@ -5,9 +5,10 @@ package pattern.structure.adapter01;
  * @date 2019/9/710:33
  */
 
-import designPattern.adapter01.adapter.TurkeyAdapter01;
-import designPattern.adapter01.duck.Duck;
-import designPattern.adapter01.turkey.WildTurkey;
+
+import pattern.structure.adapter01.adapter.TurkeyAdapter01;
+import pattern.structure.adapter01.duck.Duck;
+import pattern.structure.adapter01.turkey.WildTurkey;
 
 /**
  * 让火鸡像鸭子一样行为，飞，叫

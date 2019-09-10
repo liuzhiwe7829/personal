@@ -1,6 +1,7 @@
 package pattern.behavioral.observer.weatherJavaInnerDemo.observers;
 
-import designPattern.behavioral.observer.weatherJavaInnerDemo.subjects.WeatherData;
+
+import pattern.behavioral.observer.weatherJavaInnerDemo.subjects.WeatherData;
 
 import java.util.Observable;
 import java.util.Observer;
