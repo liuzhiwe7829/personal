@@ -1,5 +1,9 @@
 package custom.agent;
 
+/**
+ * jdk路径下 tools.jar
+ */
+
 import com.sun.tools.attach.VirtualMachine;
 
 public class AttachAgent {
