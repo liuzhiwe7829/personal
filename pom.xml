@@ -22,6 +22,7 @@
     <modules>
         <module>java-agent</module>
         <module>design-pattern</module>
+        <module>excel</module>
     </modules>
     <properties>
         <!-- 文件拷贝时的编码 -->
