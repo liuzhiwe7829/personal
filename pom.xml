@@ -24,6 +24,14 @@
         <module>design-pattern</module>
         <module>excel</module>
     </modules>
+    <dependencies>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.62</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
     <properties>
         <!-- 文件拷贝时的编码 -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
