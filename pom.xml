@@ -23,6 +23,7 @@
         <module>java-agent</module>
         <module>design-pattern</module>
         <module>excel</module>
+        <module>seata</module>
     </modules>
     <dependencies>
         <dependency>
