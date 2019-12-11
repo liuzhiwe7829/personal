@@ -15,7 +15,7 @@ public class ThreadPoolTest {
 
         // 开始时间
         long start = System.currentTimeMillis();
-        List<String> list = new ArrayList<String>();
+        List<String> list = new ArrayList<>();
         int total = 100;
         for (int i = 1; i <= total; i++) {
             list.add(i + "");
@@ -31,9 +31,9 @@ public class ThreadPoolTest {
 
         // 创建一个线程池
         ExecutorService exec = Executors.newFixedThreadPool(threadNum);
-        CountDownLatch countDownLatch = new CountDownLatch(threadNum);
+        new CountDownLatch(threadNum);
         // 定义一个任务集合
-        List<Callable<Integer>> tasks = new ArrayList<Callable<Integer>>();
+        List<Callable<Integer>> tasks = new ArrayList<>();
         Callable<Integer> task = null;
         List<String> cutList = null;
         long begaintime = System.currentTimeMillis();
@@ -49,13 +49,9 @@ public class ThreadPoolTest {
             }
             // System.out.println("第" + (i + 1) + "组：" + cutList.toString());
             final List<String> listStr = cutList;
-            task = new Callable<Integer>() {
-
-                @Override
-                public Integer call() throws Exception {
-                    System.out.println(Thread.currentThread().getName() + "线程：" + listStr);
-                    return 1;
-                }
+            task = () -> {
+                System.out.println(Thread.currentThread().getName() + "线程：" + listStr);
+                return 1;
             };
             // 这里提交的任务容器列表和返回的Future列表存在顺序对应的关系
             tasks.add(task);
