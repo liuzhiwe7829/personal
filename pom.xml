@@ -26,6 +26,7 @@
         <module>seata</module>
         <module>rete</module>
         <module>jdk8</module>
+        <module>nowcoder</module>
     </modules>
     <dependencies>
         <dependency>
