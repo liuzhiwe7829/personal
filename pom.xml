@@ -27,6 +27,7 @@
         <module>rete</module>
         <module>jdk8</module>
         <module>nowcoder</module>
+        <module>dataDesensitization</module>
     </modules>
     <dependencies>
         <dependency>
