@@ -28,6 +28,7 @@
         <module>jdk8</module>
         <module>nowcoder</module>
         <module>dataDesensitization</module>
+        <module>zookeeper-study</module>
     </modules>
     <dependencies>
         <dependency>
