@@ -1,4 +1,4 @@
-package com.study.mike.rpc.server;
+package server;
 
 public abstract class RpcServer {
 

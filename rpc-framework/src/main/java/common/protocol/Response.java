@@ -22,6 +22,9 @@ public class Response implements Serializable {
 
     private Exception exception;
 
+    public Response(Status success) {
+    }
+
     public Status getStatus() {
         return status;
     }

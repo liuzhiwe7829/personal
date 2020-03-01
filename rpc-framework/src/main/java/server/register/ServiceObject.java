@@ -1,4 +1,4 @@
-package com.study.mike.rpc.server.register;
+package server.register;
 
 public class ServiceObject {
 

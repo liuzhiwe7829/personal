@@ -1,4 +1,4 @@
-package com.study.mike.rpc.server.register;
+package server.register;
 
 import java.util.HashMap;
 import java.util.Map;
