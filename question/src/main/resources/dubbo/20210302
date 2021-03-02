@@ -1,0 +1,61 @@
+
+
+
+####
+https://www.cnblogs.com/luozhiyun/p/10960593.html
+
+dubbo 控制并发数与限流
+
+```
+ExecuteLimitFilter#
+
+ExecuteLimitFilter ，在服务提供者，通过 <dubbo:service /> 的 "executes" 统一配置项开启：
+表示每服务的每方法最大可并行执行请求数。
+
+ExecuteLimitFilter是通过cas 来实现的对服务端的并发数的控制。
+获取max
+RpcStatus#beginCount 比较 与max值
+
+
+https://www.cnblogs.com/hansc-blog/p/9371990.html
+
+dubbo 默认实现的是滑动窗口的方式。
+TPSLimiter
+
+配置方式：
+
+1、通过 <dubbo:parameter key="tps" value="" /> 配置项，添加到 <dubbo:service />
+或 <dubbo:provider /> 或 <dubbo:protocol /> 中开启，例如：
+<dubbo:service interface="com.alibaba.dubbo.demo.DemoService" ref="demoServiceImpl" protocol="injvm" >
+    <dubbo:parameter key="tps" value="100" />
+</dubbo:service>
+
+2、通过 <dubbo:parameter key="tps.interval" value="" /> 配置项，设置 TPS 周期。
+
+
+
+若要限流，调用 StatItem#isAllowable(url, invocation) 方法，根据 TPS 限流规则判断是否限制此次调用。
+
+StatItem
+    private long lastResetTime;
+    private long interval;
+    private AtomicInteger token;
+    private int rate;
+    public boolean isAllowable() {
+        long now = System.currentTimeMillis();
+         // 若到达下一个周期，恢复可用种子数，设置最后重置时间。
+        if (now > lastResetTime + interval) {
+            token.set(rate);// 回复可用种子数
+            lastResetTime = now;// 最后重置时间
+        }
+        // CAS ，直到或得到一个种子，或者没有足够种子
+        int value = token.get();
+        boolean flag = false;
+        while (value > 0 && !flag) {
+            flag = token.compareAndSet(value, value - 1);
+            value = token.get();
+        }
+
+        return flag;
+    }
+```

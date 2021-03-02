@@ -1,0 +1,47 @@
+[toc]
+
+##### 1、zookeeper ->nacos
+```
+ * 1、zookeeper ->nacos
+ * 1.cap定理考虑
+ * 注册中心应该是一个ap
+ * zk cp 场景 master gg 重新选举  1、2  与3 网络断，3不能注册新机器
+ * 2.zk 瓶颈
+ * 1. ZooKeeper写是不可扩展的，当注册节点一定时，写性能会是瓶颈，发布应用时出现排队现象，表现出来的现象就是，应用的启动变得十分缓慢
+ * 2. ZooKeeper不支持跨机房的路由
+ * 3. ZooKeeper当节点过多时，如果有服务节点变更，需要同时通知机器，会发生“惊群效应”， 瞬间打满网卡，且容易重复通知
+```
+
+2、java 零拷贝  netty零拷贝
+
+```
+
+https://www.cnblogs.com/z-sm/p/6547709.html
+NIO DirectByteBuffer
+Java NIO引入了用于通道的缓冲区的ByteBuffer。 ByteBuffer有三个主要的实现：
+
+HeapByteBuffer
+在调用ByteBuffer.allocate（）时使用。 它被称为堆，因为它保存在JVM的堆空间中，因此你可以获得所有优势，如GC支持和缓存优化。 但是，它不是页面对齐的，这意味着如果你需要通过JNI与本地代码交谈，JVM将不得不复制到对齐的缓冲区空间。
+
+DirectByteBuffer
+在调用ByteBuffer.allocateDirect（）时使用。 JVM将使用malloc（）在堆空间之外分配内存空间。 因为它不是由JVM管理的，所以你的内存空间是页面对齐的，不受GC影响，这使得它成为处理本地代码的完美选择。 然而，你要C程序员一样，自己管理这个内存，必须自己分配和释放内存来防止内存泄漏。
+
+MappedByteBuffer
+在调用FileChannel.map（）时使用。 与DirectByteBuffer类似，这也是JVM堆外部的情况。 它基本上作为OS mmap（）系统调用的包装函数，以便代码直接操作映射的物理内存数据。
+————————————————
+版权声明：本文为CSDN博主「拿笔小星_」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/u013096088/article/details/79122671
+
+
+https://www.cnblogs.com/200911/articles/10432551.html
+```
+3、zookeeper 分布式id  zk分布式id
+
+```
+https://blog.csdn.net/sunfeizhi/article/details/51926396
+https://www.cnblogs.com/lwx57280/p/13791511.html
+
+```
+
+4、voliate  指令重排
+```
