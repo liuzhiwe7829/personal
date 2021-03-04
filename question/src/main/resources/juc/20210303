@@ -1,0 +1,4 @@
+guava中常用几个类
+MoreExecutors：提供了一些静态方法，是对juc中的Executors类的一个扩展。
+Futures：也提供了很多静态方法，是对juc中Future的一个扩展。
+
