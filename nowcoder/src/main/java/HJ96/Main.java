@@ -32,35 +32,18 @@ public class Main {
             String str = in.nextLine();
             char[] chars = str.toCharArray();
             StringBuffer sb = new StringBuffer();
-            //*号数量统计
-            int count = 0;
-            //前后类型是否一致
-            boolean flag;
-            for (int i = 0; i < chars.length; i++) {
-                char temp = chars[i];
-                //首位
-                if (Character.isDigit(temp)&&i==0) {
+            for (int i = 0; i < chars.length; ) {
+                if(Character.isDigit(chars[i])){
                     sb.append("*");
-                    sb.append(temp);
-                    count++;
-                }else
-                    //最后一位数字
-                    if ((i == chars.length - 1) && Character.isDigit(chars[chars.length - 1])) {
-                        sb.append(temp);
-                        sb.append("*");
-                 } else
-                //中间  数字-字母
-                if (Character.isDigit(temp) &&Character.isLetter(chars[i+1])) {
-                    sb.append(temp);
+                    while (i<chars.length&& Character.isDigit(chars[i])){
+                        sb.append(chars[i]);
+                        i++;
+                    }
                     sb.append("*");
-                    count++;
-                }else if (Character.isLetter(temp) &&Character.isDigit(chars[i+1])) {
-                    sb.append(temp);
-                    sb.append("*");
-                    count++;
                 }else {
-                    sb.append(temp);
+                    sb.append(chars[i++]);
                 }
+
             }
             System.out.println(sb.toString());
         }
