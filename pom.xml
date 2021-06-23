@@ -20,7 +20,7 @@
         </plugins>
     </build>-->
     <modules>
-        <module>java-agent</module>
+       <!-- <module>java-agent</module>
         <module>design-pattern</module>
         <module>excel</module>
         <module>seata</module>
@@ -28,13 +28,9 @@
         <module>jdk8</module>
         <module>nowcoder</module>
         <module>dataDesensitization</module>
-        <module>zookeeper-study</module>
-        <module>spring-boot-dubbo</module>
-        <module>spring-boot-dubbo-consumer</module>
-        <module>rpc-framework</module>
-        <module>test</module>
+        <module>test</module>-->
         <module>question</module>
-        <module>juc</module>
+        <!--<module>juc</module>-->
     </modules>
     <dependencies>
         <dependency>
