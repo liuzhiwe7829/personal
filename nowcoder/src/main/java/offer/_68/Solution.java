@@ -1,11 +1,11 @@
-package offer._68;
+package Offer._68;
 
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
  *     int val;
  *     TreeNode left;
- *     TreeNode right;
+ *     TreeNodegi right;
  *     TreeNode(int x) { val = x; }
  * }
  */

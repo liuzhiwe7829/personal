@@ -1,4 +1,4 @@
-package offer._50;
+package Offer._50;
 
 import java.util.LinkedList;
 import java.util.List;
