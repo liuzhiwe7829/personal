@@ -1,0 +1,15 @@
+Host github.com
+ HostName github.com
+ User liuzhiwe7829
+ IdentityFile C:\\Users\\zhiwei.liu003\\.ssh\\id_rsa_personal
+
+Host china-cri.com
+ HostName china-cri.com
+ IdentityFile C:\\Users\\zhiwei.liu003\\.ssh\\id_rsa
+ User zhiwei.liu003
+
+Host sino-life.com
+ HostName ssh.sino-life.com
+ IdentityFile C:\\Users\\zhiwei.liu003\\.ssh\\id_rsa_sl
+ User zhiwei.liu003
+

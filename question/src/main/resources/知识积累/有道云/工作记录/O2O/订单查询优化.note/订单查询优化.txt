@@ -1,0 +1,186 @@
+select A2.*,
+		case 
+			when ( orderStatusForQuery='temp' and 
+					 ( 	 ifnull(biPolicyStatus,ciPolicyStatus) is null or 
+						 ifnull(biPolicyStatus,ciPolicyStatus)='01' or 
+						 ifnull(biPolicyStatus,ciPolicyStatus)='02' 
+					 ) 
+				 )then '1' else '0' 
+		end 
+		continueInsurBtn 
+		from (     
+			    select 
+						A1.*,      
+						case when ( (orderStatusForQuery in ('temp','invalid') and (ifnull(biPolicyStatus,ciPolicyStatus)='03'))  
+						or orderStatusForQuery='waitPay' )                           
+						then '1' else '0' end showReInsurBtn,
+						case when ( orderStatus in('01','04') and leftPaySeconds >0 and ifnull(biPolicyStatus,'05')='05'            
+									and 
+									ifnull(ciPolicyStatus,'05') = '05' 
+									) 
+							 then '1' else '0' end 
+						showPayBtn,
+						case when orderStatusForQuery = 'waitPeopleCheck' then '1' when orderStatusForQuery='waitPay' then '1' else '0' end 
+						showViewProposalBtn,
+						case when orderStatusForQuery = 'issuedModify' 	then '1' else '0' end
+						showIssuedModifyBtn,
+						case when orderStatusForQuery = 'waitRewal' then '1' else '0' end 
+						showRewalBtn, case when orderStatus in('00','01') then '1' else '0' end 
+						showCancelOrderBtn,
+						case when leftPayHours >=0 and orderStatusForQuery ='waitPay' then floor(leftPayHours/24) else ''end 
+						leftPayDay,
+						case when leftPayHours >=0 and orderStatusForQuery ='waitPay' then leftPayHours-floor(leftPayHours/24)*24 else '' end 
+						leftPayHour,        
+						case when leftPayMinutes >=0 and orderStatusForQuery ='waitPay' then leftPayMinutes-floor(leftPayHours*60) else '' end leftPayMinute,        
+						case when leftPaySeconds >=0 and orderStatusForQuery ='waitPay' then leftPaySeconds else '' end leftPaySecond, 
+						case when leftRenewalTime1 >=0 and orderStatusForQuery ='waitRewal' then floor(leftRenewalTime1/24) else '' end leftRenewalDay,
+						case when leftRenewalTime1 >=0 and orderStatusForQuery ='waitRewal' then leftRenewalTime1-floor(leftRenewalTime1/24)*24 else '' end leftRenewalHour,
+						case when orderStatusForQuery = 'temp' then '暂存单'        
+							 when orderStatusForQuery ='waitPay' then '待支付'
+							 when orderStatusForQuery = 'paying' then '支付中'
+							 when orderStatusForQuery ='payed' then '已支付'
+							 when orderStatusForQuery = 'valid' then '保障中'
+							 when orderStatusForQuery ='waitRewal' then '待续保'
+							 when orderStatusForQuery ='invalid' then '已失效'
+							 when orderStatusForQuery ='waitPeopleCheck' then '人工审核'
+							 when orderStatusForQuery ='issuedModify' then '下发修改' 
+							 when orderStatusForQuery ='endor' then '批改单'  
+							 when orderStatusForQuery ='issueRefuse' then '拒保'
+							 end orderStatusLabel,       
+						CASE WHEN orderStatusForQuery = 'waitRewal' THEN A1.policyEndDate         
+							 WHEN (orderStatusForQuery IN ('waitPay', 'payed','valid') OR (A1.biPolicyStatus='03' or A1.ciPolicyStatus='03')) THEN A1.signDate                      
+							 ELSE A1.modifiedDate END orderDate,                   
+						CASE WHEN orderStatusForQuery IN ('payed','valid') AND 
+							 EXISTS                      
+							 (SELECT 1 FROM PROP_ORDER UNCAR_ORDER,PROP_POLICY UNCAR_POLICY 
+								WHERE UNCAR_ORDER.RELATED_ORDER_NO = orderNo                       
+								AND UNCAR_ORDER.ORDER_NO = UNCAR_POLICY.ORDER_NO
+								AND UNCAR_ORDER.ORDER_STATUS in ('01','04') 
+								AND UNCAR_ORDER.IS_DELETE = '0'
+								AND UNCAR_POLICY.POLICY_STATUS ='05' 
+								AND (TIMESTAMPDIFF(SECOND ,SYSDATE(), UNCAR_ORDER.PAY_END_DATE)) > 0)
+							 THEN '1'                       
+							 WHEN orderStatusForQuery IN ('payed','valid') AND EXISTS                      
+								(SELECT 1 FROM PROP_ORDER UNCAR_ORDER,PROP_POLICY UNCAR_POLICY
+									WHERE UNCAR_ORDER.RELATED_ORDER_NO = orderNo                       
+									AND UNCAR_ORDER.ORDER_NO = UNCAR_POLICY.ORDER_NO 
+									AND UNCAR_ORDER.ORDER_STATUS in ('01','04') 
+									AND UNCAR_ORDER.IS_DELETE = '0'                      
+									AND UNCAR_POLICY.POLICY_STATUS ='05' 
+									AND (TIMESTAMPDIFF(SECOND ,SYSDATE(), UNCAR_ORDER.PAY_END_DATE)) <= 0) 
+							 THEN '2' 
+							 ELSE '0' 
+							 END uncarUnPay     
+							 from ( 
+									SELECT o.order_no  orderNo,
+									(select loa.status from prop_order_loan loa where loa.car_order_no = o.order_no limit 1) loanStatus,
+									 v.use_nature_code useNatureCode,
+									 CONCAT_WS(',',bi.policy_no,ci.policy_no) policyNo,
+									 CONCAT_WS(',',bi.proposal_no,ci.proposal_no) proposalNo,
+									 v.license_no licenseNo ,
+									 v.frame_no frameNo,
+									 v.city_code cityCode,
+									 v.insuredhabit insuredHabit,
+									 CASE when p.product_type ='0' 
+										THEN 
+										( CASE  WHEN ci.id is not null and bi.id is not null 
+											    then CONCAT_WS('+','商业险','交强险',
+																(  
+																	select group_concat(d.product_name  SEPARATOR '+') 
+																	from prop_order p,prop_product d where d.product_code = p.product_code
+																	and p.related_order_no = o.order_no and p.customer_id = o.customer_id and p.is_delete = '0'
+																)
+															)         
+											    WHEN ci.id is not null and bi.id is null 
+												then CONCAT_WS('+','交强险',
+																(
+																	select group_concat(d.product_name  SEPARATOR '+') from 
+																	prop_order p,prop_product d where d.product_code = p.product_code            and p.related_order_no=o.order_no and 		  p.customer_id = o.customer_id and p.is_delete = '0'
+																 )
+															   )
+												WHEN ci.id is null and bi.id is not null 
+												then CONCAT_WS('+','商业险',
+															(select group_concat(d.product_name  SEPARATOR '+') from prop_order p,prop_product d where d.product_code = p.product_code            and p.related_order_no=o.order_no and p.customer_id = o.customer_id and p.is_delete = '0')
+															)           
+												ELSE p.product_name END         
+										)
+										ELSE p.product_name 
+										END productName,
+										ppa.name appntName,
+										i.`name` insuredName,
+										CASE WHEN ci.id is not null and bi.id is not null then CONCAT_WS('+',FORMAT(o.order_amount, 2),
+											(select group_concat(FORMAT(p.order_amount, 2)  SEPARATOR '+') from prop_order p where p.related_order_no=o.order_no and p.customer_id = o.customer_id and p.is_delete = '0'))
+										WHEN ci.id is not null and bi.id is null then CONCAT_WS('+',FORMAT(o.order_amount, 2),
+											(select group_concat(FORMAT(p.order_amount, 2)  SEPARATOR '+') from prop_order p where p.related_order_no=o.order_no and p.customer_id = o.customer_id and p.is_delete = '0'))          
+										WHEN ci.id is null and bi.id is not null then CONCAT_WS('+',FORMAT(o.order_amount, 2),
+											(select group_concat(FORMAT(p.order_amount, 2)  SEPARATOR '+') from prop_order p where p.related_order_no=o.order_no and p.customer_id = o.customer_id and p.is_delete = '0'))          
+										ELSE FORMAT(o.order_amount, 2) 
+										END prem,      
+										CASE WHEN ci.id is not null and bi.id is not null then
+											(CASE WHEN (CONCAT(DATE_FORMAT(ci.start_date,'%Y-%m-%d'),'至',DATE_FORMAT(ci.end_date,'%Y-%m-%d')) ) = 	  		          (CONCAT(DATE_FORMAT(bi.start_date,'%Y-%m-%d'),'至',DATE_FORMAT(bi.end_date,'%Y-%m-%d'))) 
+											 THEN  CONCAT(DATE_FORMAT(bi.start_date,'%Y-%m-%d'),'至',DATE_FORMAT(bi.end_date,'%Y-%m-%d'))  
+											 ELSE concat('交强:',CONCAT(DATE_FORMAT(ci.start_date,'%Y-%m-%d'),'至',DATE_FORMAT(ci.end_date,'%Y-%m-%d')),' , 商业:',CONCAT(DATE_FORMAT(bi.start_date,'%Y-%m-%d'),'至',DATE_FORMAT(bi.end_date,'%Y-%m-%d')))           
+											 END
+											 )
+										WHEN ci.id is not null and bi.id is null then CONCAT(DATE_FORMAT(ci.start_date,'%Y-%m-%d'),'至',DATE_FORMAT(ci.end_date,'%Y-%m-%d')) 
+										WHEN ci.id is null and bi.id is not null then CONCAT(DATE_FORMAT(bi.start_date,'%Y-%m-%d'),'至',DATE_FORMAT(bi.end_date,'%Y-%m-%d'))         
+										END  cvilidate,
+										DATE_FORMAT(IFNULL(bi.under_write_date,ci.under_write_date),'%Y-%m-%d') signDate,
+										DATE_FORMAT(IFNULL(bi.end_date, ci.end_date),'%Y-%m-%d') policyEndDate,       
+										CASE WHEN   o.order_status in ('00','01','04') 
+											then              
+												(
+													case 
+														when (IFNULL(bi.policy_status,ci.policy_status) ='05' and (TIMESTAMPDIFF(SECOND ,SYSDATE(), o.pay_end_date)) > 0) 
+														THEN 'waitPay'               
+														when (IFNULL(bi.policy_status,ci.policy_status) ='05' and (TIMESTAMPDIFF(SECOND ,SYSDATE(), o.pay_end_date)) <= 0 ) 
+														THEN 'invalid'             
+														when IFNULL(bi.policy_status,ci.policy_status) ='04' 
+														THEN 'waitPeopleCheck'              
+														when IFNULL(ci.policy_status,bi.policy_status) ='11' 
+														THEN 'issuedModify'             
+														when IFNULL(ci.policy_status,bi.policy_status) in ('12','13','14','15') 
+														THEN 'endor'              
+													when IFNULL(ci.policy_status,bi.policy_status) = '16' 
+													THEN 'issueRefuse'             
+													else 'temp' 
+													end
+												)
+											WHEN o.order_status ='02' THEN 'paying'         
+											WHEN o.order_status ='03' THEN 'payed'          
+											WHEN (o.order_status in ('05','06') or (o.order_status in ('01','04') and TIMESTAMPDIFF(SECOND ,SYSDATE(), o.pay_end_date) <= 0 ) )	THEN 'invalid'                     
+											WHEN o.order_status ='07' THEN (case when TIMESTAMPDIFF(SECOND ,SYSDATE(), IFNULL(bi.end_date,ci.end_date)) <= 0 THEN 'invalid' else 'valid' end )           
+											WHEN IFNULL(ci.policy_status,bi.policy_status) ='08' 
+											THEN 'valid'         
+											END orderStatusForQuery,
+											o.order_status orderStatus,
+											o.is_send_epolicy isSendEpolicy,
+											(TIMESTAMPDIFF(HOUR ,SYSDATE(), o.pay_end_date)) leftPayHours,
+											(TIMESTAMPDIFF(MINUTE ,SYSDATE(), o.pay_end_date)) leftPayMinutes,
+											(TIMESTAMPDIFF(SECOND ,SYSDATE(), o.pay_end_date)) leftPaySeconds,
+											TIMESTAMPDIFF(HOUR,SYSDATE(),date_add(IFNULL(bi.end_date,ci.end_date) ,
+											interval a.start_date_max day)) leftRenewalTime1,       
+											ci.policy_status ciPolicyStatus,       
+											bi.policy_status biPolicyStatus,       
+											o.created_date,       
+											o.modified_date modifiedDate,       
+											date_format(IFNULL(ci.premium_calculate_date,bi.premium_calculate_date),'%Y-%m-%d %H:%i:%s') premiumCalculateDate,       
+											(select salesman_code from e_agent_auth where customer_id=o.customer_id and is_delete=0) cCurrentOperater, 
+											(select salesman_name from e_agent_auth where customer_id=o.customer_id and is_delete=0) cCurrentOperaterName, 
+											(select name from e_customer where id=o.customer_id and is_delete=0) eMobile,
+											(select real_Name from e_customer where id=o.customer_id and is_delete=0) eRealName      from prop_order o
+											LEFT JOIN prop_product p on o.product_code = p.product_code 
+											LEFT JOIN prop_order_vehicle v on o.order_no = v.order_no
+											LEFT JOIN prop_policy ci on o.order_no = ci.order_no and  ci.risk_mark ='0'
+											LEFT JOIN prop_policy bi on o.order_no = bi.order_no and bi.risk_mark ='1' 
+											LEFT JOIN prop_policy_appnt ppa ON ppa.order_no = o.order_no 
+											LEFT JOIN prop_policy_insured i on i.order_no = o.order_no
+											LEFT JOIN e_area a on v.city_code = a.code and a.level='2' and a.is_delete ='0'
+											LEFT JOIN e_agent_store eas on o.agent_store_no = eas.agent_store_no and eas.is_delete='0'
+											where o.is_delete = '0' and o.customer_id = '18995'  and p.product_Type = '0' and o.endor_status is null
+											and IFNULL(bi.modified_date,ci.modified_date) >= DATE_FORMAT('2000-01-01','%Y-%m-%d') and IFNULL(bi.modified_date,ci.modified_date)  <= DATE_SUB( DATE_ADD('2020-03-10' ,interval 1 day),interval 1 second)                                                                                                                                                   
+											ORDER BY o.modified_date desc                                                                            
+											limit 0,10                                                                    
+							 )A1    
+				)A2                                            
+			ORDER BY modifiedDate desc                    

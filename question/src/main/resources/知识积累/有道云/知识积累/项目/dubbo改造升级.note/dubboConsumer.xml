@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://dubbo.apache.org/schema/dubbo
+       http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+    <!-- 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 -->
+    <dubbo:application name="carpcip-dubbo-consumer"/>
+    <!-- 使用multicast广播注册中心暴露发现服务地址 -->
+    <dubbo:registry address="zookeeper://192.168.26.171:2181?backup=192.168.26.172:2181" />
+
+ 	<!-- 使用zookeeper注册中心暴露服务地址 -->  
+    <!-- <dubbo:registry address="zookeeper://192.168.255.119" /> -->   
+    <!-- 生成远程服务代理，可以和本地bean一样使用demoService -->
+    <dubbo:reference id="vechileBusinessService" interface="com.chinacri.cloud.prpall.service.VechileBusinessService"
+                     version="1.0.0-SNAPSHOT"  timeout="60000"/>
+    <dubbo:reference id="vechileUnderwriteRpcService" interface="com.chinacri.cloud.prpall.service.VechileUnderwriteRpcService"
+                     version="1.0.0-SNAPSHOT" timeout="60000"/>
+    <dubbo:reference id="shenZhenProposalInfoManAgeService" interface="com.chinacri.cloud.prpall.service.ShenZhenProposalInfoManAgeService"
+                     version="1.0.0-SNAPSHOT" timeout="60000"/>               
+	<!-- 1、关闭某个服务的启动时检查：(没有提供者时报错) -->
+    <dubbo:reference id="guCIplatformEncoderDecoderTPService" interface="com.chinacri.cloud.service.GuCIplatformEncoderDecoderTPService"
+                      version="1.0.0-SNAPSHOT" timeout="60000" check="false"/>
+    <!--  2、关闭所有服务的启动时检查：(没有提供者时报错)  写在定义服务消费者一方 -->                 
+	<dubbo:consumer check="false" />
+</beans>

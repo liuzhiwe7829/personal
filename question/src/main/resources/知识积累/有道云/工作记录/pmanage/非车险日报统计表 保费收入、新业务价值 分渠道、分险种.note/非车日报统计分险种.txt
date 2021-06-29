@@ -1,0 +1,63 @@
+SELECT
+				---- 保费收入 start 
+        sum(abd.GEN_PREM_BUSINESS_D) GEN_PREM_BUSINESS_D,
+        sum(abd.GEN_PREM_BUSINESS_M) GEN_PREM_BUSINESS_M,
+        sum(abd.GEN_PREM_BUSINESS_Y) GEN_PREM_BUSINESS_Y,
+				---- 保费收入 end
+        sum(abd.CHANGE_SALES_FEE_D) CHANGE_SALES_FEE_D,
+        sum(abd.CHANGE_SALES_FEE_M) CHANGE_SALES_FEE_M,
+        sum(abd.CHANGE_SALES_FEE_Y) CHANGE_SALES_FEE_Y,
+        sum(abd.NUM_OF_RED_CLM_D) NUM_OF_RED_CLM_D,
+        sum(abd.NUM_OF_RED_CLM_M) NUM_OF_RED_CLM_M,
+        sum(abd.NUM_OF_RED_CLM_Y) NUM_OF_RED_CLM_Y,
+        sum(abd.REGISTER_OST_AMT_D) REGISTER_OST_AMT_D,
+        sum(abd.REGISTER_OST_AMT_M) REGISTER_OST_AMT_M,
+        sum(abd.REGISTER_OST_AMT_Y) REGISTER_OST_AMT_Y,
+        sum(abd.NUM_OF_SETL_CLM_D) NUM_OF_SETL_CLM_D,
+        sum(abd.NUM_OF_SETL_CLM_M) NUM_OF_SETL_CLM_M,
+        sum(abd.NUM_OF_SETL_CLM_Y) NUM_OF_SETL_CLM_Y,
+        sum(abd.SETL_LOSS_D) SETL_LOSS_D,
+        sum(abd.SETL_LOSS_M) SETL_LOSS_M,
+        sum(abd.SETL_LOSS_Y) SETL_LOSS_Y,
+        sum(abd.NUM_OF_OPEN_OST_CLM_D) NUM_OF_OPEN_OST_CLM_D,
+        sum(abd.NUM_OF_OPEN_OST_CLM_M) NUM_OF_OPEN_OST_CLM_M,
+        sum(abd.NUM_OF_OPEN_OST_CLM_Y) NUM_OF_OPEN_OST_CLM_Y,
+        sum(abd.OPENING_OST_AMT_D) OPENING_OST_AMT_D,
+        sum(abd.OPENING_OST_AMT_M) OPENING_OST_AMT_M,
+        sum(abd.OPENING_OST_AMT_Y) OPENING_OST_AMT_Y,
+        sum(abd.NUM_OF_END_OST_CLM_D) NUM_OF_END_OST_CLM_D,
+        sum(abd.NUM_OF_END_OST_CLM_M) NUM_OF_END_OST_CLM_M,
+        sum(abd.NUM_OF_END_OST_CLM_Y) NUM_OF_END_OST_CLM_Y,
+        sum(abd.ENDING_OST_AMT_D) ENDING_OST_AMT_D,
+        sum(abd.ENDING_OST_AMT_M) ENDING_OST_AMT_M,
+        sum(abd.ENDING_OST_AMT_Y) ENDING_OST_AMT_Y,
+        sum(abd.PERIOD_PAYMENT_1W_D) PERIOD_PAYMENT_1W_D,
+        sum(abd.PERIOD_PAYMENT_1W_M) PERIOD_PAYMENT_1W_M,
+        sum(abd.PERIOD_PAYMENT_1W_Y) PERIOD_PAYMENT_1W_Y,
+        sum(abd.PERIOD_PAYMENT_D) PERIOD_PAYMENT_D,
+        sum(abd.PERIOD_PAYMENT_M) PERIOD_PAYMENT_M,
+        sum(abd.PERIOD_PAYMENT_Y) PERIOD_PAYMENT_Y,
+        sum(abd.GEN_PREM_NOTAX_D) GEN_PREM_NOTAX_D,
+        sum(abd.GEN_PREM_NOTAX_M) GEN_PREM_NOTAX_M,
+        sum(abd.GEN_PREM_NOTAX_Y) GEN_PREM_NOTAX_Y,
+        sum(abd.OPENING_OST_AMT_IY) OPENING_OST_AMT_IY,
+        sum(abd.ENDING_OST_AMT_IY) ENDING_OST_AMT_IY,
+        sum(abd.GROW_OST_AMT_M) GROW_OST_AMT_M,
+        sum(abd.GROW_OST_AMT_M) GROW_OST_AMT_M,
+        sum(abd.GROW_OST_AMT_Y) GROW_OST_AMT_Y
+        from AGG_BUSINESS_MANAGE_NOPLY_DAY abd
+        JOIN SYSTEM_CHANNEL cc ON abd.teamtype =cc.channel_code
+        JOIN SYSTEM_PRODUCT_RISK pr on abd.prod_code = pr.risk_code
+        LEFT JOIN SYSTEM_PRODUCT pp on pr.PRODUCT_CODE = pp.PRODUCT_CODE
+        where 1=1
+        --- 机构
+         and abd.COMPANYCODE like concat('01','%')
+        --- 日期 
+       and abd.cal_date_id = '20191031'
+        ---- 渠道 空
+        --    and abd.teamtype = ''
+        --- 产品 P02非车
+        --    and pr.PRODUCT_CODE = 'P02'
+        --- 条线 "C06", "责任险条线"  "C00", "全险内条线"  "C05", "意外险条线"  "C01", "财产条线" "C03", "非车信保条线"
+          and pr.RISK_LINE = 'C06'
+       

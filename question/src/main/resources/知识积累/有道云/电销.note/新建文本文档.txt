@@ -1,0 +1,61 @@
+svn地址
+http://dws.sino-life.com/svn4/sinopower/branches/dev/TSP_0/TSPP/dev_0.1.0
+http://dws.sino-life.com/svn4/sinopower/branches/dev/TSP_0/TSPC/dev_0.1.0
+http://dws.sino-life.com/svn4/sinopower/branches/dev/TSP_0/TSPM/dev_0.1.0
+生产环境版本发布资料地址
+http://dws.sino-life.com/doc2/projectdoc/交付文档库/版本交付/产险核心平台组/产险电销
+部署思路：下载上一个版本的jar包，用jar命令解压，添加增量内容，再打成jar
+测试服务器地址
+192.168.26.177/178 mwuser/mwuser
+日志地址
+/mwbase/applogs/rtlog/PPSP_0_INT_2_1_1
+生产日志
+cd /home/mwuser/tsp-tomcat/logs
+
+账号信息
+电销环境日常使用
+常用账户
+-- 电话销售系统 登录名和密码
+区部经理：Sinolife2008
+20141001@chinacriagent.com <mailto:20141001@chinacriagent.com>   陈颖
+20140007@chinacriagent.com <mailto:20140007@chinacriagent.com>   沈彬
+团队长
+20140010@chinacriagent.com <mailto:20140010@chinacriagent.com>   封远洋
+20140003@chinacriagent.com <mailto:20140003@chinacriagent.com>  王强
+座席
+20141108@chinacriagent.com <mailto:20141108@chinacriagent.com>   刘清霞
+20141006@chinacriagent.com <mailto:20141006@chinacriagent.com>  丰尧成
+黄冬旋   20141155@chinacriagent.com      
+曹仲宁   20141112@chinacriagent.com 
+刘翠     20141113@chinacriagent.com
+毛会杰   20141118@chinacriagent.com
+陈聪     20141119@chinacriagent.com
+姜帅     20141167@chinacriagent.com
+陈志文   20141086@chinacriagent.com
+
+以上账户的 密码默认是 Sinolife2008
+
+比较常用的是
+20141108@chinacriagent.com <mailto:20141108@chinacriagent.com>  刘清霞
+20141006@chinacriagent.com <mailto:20141006@chinacriagent.com>  丰尧成
+
+生产账号
+20161773@chinacriagent.com   管理员
+Sinolife2008
+
+20161702@chinacriagent.com 陈美红
+
+liling.zhao001@sino-life.com
+LILINGzhao00
+
+彭小玉					
+20141672@chinacriagent.com
+
+测试地址
+http://192.168.26.177:8099/TSPC/
+生产地址
+http://172.27.200.54/TSPC/
+
+
+电销账号：20180420@chinacriagent.com
+    密码：Sinolife2008

@@ -1,0 +1,406 @@
+保单类型(policyType): T
+投保单号(proposalNo): null
+报价单号(QuoteNo): 20200000000021513645
+保单号（批单）(policyNo): null
+批单号（批单）(endorseNo): 
+险种代码）(riskCode): 0801
+合同号 (contractNo): null
+协议号 (protocolNo): 010905000000200022
+是续保保单(isRenewed): false
+上年保险止期(lastYearEndDate): null
+录入日期(inputDate): null
+补录日期(addInputDate): null
+签单日期(issueDate): Wed Mar 25 17:08:50 CST 2020
+起保日期(startDate): 2020-04-01
+止保日期(endDate): 2021-03-31
+商业险手续费比例(commercialFees): 0.0
+交强险手续费比例(saliFees): 0.0
+商业险总保额(sumCommercialInsured): 0.0
+代理人代码(agentCode): null
+代理人名称(agentName): 
+机构代码(companyCode): 0109050101
+业务渠道(businessMode): 00
+交强险保费变化(addCommercialPrem): 0.0
+商业险保费变化(addSaliPrem): 0.0
+是注销(isCancel): false
+是退保(isSurrender): false
+是补录保单(isAddInput): false
+是批改车船税(isModifyTax): false
+加保车损险保额(addLossInsuranceAccount): 0.0
+加保盗抢险保额(addRobPlanAccount): 0.0
+是批改投保人信息(isModifyApplicantInformation): false
+是批改被保险人信息(isModifyInsuredInformation): false
+
+投保单号(proposalNo): 0100303136320200003064
+交强签单保费(jqVerifiedFee): 896.2264150943396
+商业签单保费(commercialVerifiedFee): 896.2264150943396
+渠道核保系数(channelUnderwritingRate): 0.0
+交通违法系数(trafficIllegalRate): 0.0
+自主渠道系数(channelRate): 0.0
+自主核保系数(underwritingRate): 0.0
+险种代码(riskCode): 0801
+是否过户车(isTransforCar): false
+无赔款优待系数(noClaimFactor): 0.0
+折扣率区间(discount): 0.7
+短期费率(shortrate): 1.0
+交强险不浮动原因(extRateFloatFlag): 0
+交强险特殊车标志 (specialCarFlag): null
+商业险过户车标识 (chgOwnerFlag): 
+商业险不浮动原因(rateCDesc): 
+第三者责任险保额(thirdPartyLiabInsured): 0.0
+车上人员责任险(司机)保额(vehiclesDriversInsured): 0.0
+车上人员责任险(乘客)保额(vehiclesPassengerInsured): 0.0
+是否投保盗抢险(hasTheftInsurance): 
+是否投保自燃险(hasSelfCombustionInsurance): 
+是否投保涉水险(hasWadeInsurance): 
+
+商业险投保单(pflvBOMSYProposalDto): *****  PFLVBOMProposalDto  *****
+投保单号(proposalNo): 0100303136320200003064
+交强签单保费(jqVerifiedFee): 896.2264150943396
+商业签单保费(commercialVerifiedFee): 4359.877358490567
+渠道核保系数(channelUnderwritingRate): 0.0
+交通违法系数(trafficIllegalRate): 1.0
+自主渠道系数(channelRate): 0.75
+自主核保系数(underwritingRate): 0.85
+险种代码(riskCode): 0812
+是否过户车(isTransforCar): false
+无赔款优待系数(noClaimFactor): 0.6
+折扣率区间(discount): 0.7
+短期费率(shortrate): 1.0
+
+投保单号(proposalNo): 0100303136320200003064
+交强签单保费(jqVerifiedFee): 896.2264150943396
+商业签单保费(commercialVerifiedFee): 896.2264150943396
+渠道核保系数(channelUnderwritingRate): 0.0
+交通违法系数(trafficIllegalRate): 0.0
+自主渠道系数(channelRate): 0.0
+自主核保系数(underwritingRate): 0.0
+险种代码(riskCode): 0801
+是否过户车(isTransforCar): false
+无赔款优待系数(noClaimFactor): 0.0
+折扣率区间(discount): 0.7
+短期费率(shortrate): 1.0
+交强险不浮动原因(extRateFloatFlag): 0
+交强险特殊车标志 (specialCarFlag): 
+商业险过户车标识 (chgOwnerFlag): 
+商业险不浮动原因(rateCDesc): 
+第三者责任险保额(thirdPartyLiabInsured): 0.0
+车上人员责任险(司机)保额(vehiclesDriversInsured): 0.0
+车上人员责任险(乘客)保额(vehiclesPassengerInsured): 0.0
+是否投保盗抢险(hasTheftInsurance): 
+是否投保自燃险(hasSelfCombustionInsurance): 
+是否投保涉水险(hasWadeInsurance): 
+
+商业险投保单(pflvBOMSYProposal): *****  PFLVBOMProposal  *****
+投保单号(proposalNo): 0100303136320200003064
+交强签单保费(jqVerifiedFee): 896.2264150943396
+商业签单保费(commercialVerifiedFee): 4359.877358490567
+渠道核保系数(channelUnderwritingRate): 0.0
+交通违法系数(trafficIllegalRate): 1.0
+自主渠道系数(channelRate): 0.75
+自主核保系数(underwritingRate): 0.85
+险种代码(riskCode): 0812
+是否过户车(isTransforCar): false
+无赔款优待系数(noClaimFactor): 0.6
+折扣率区间(discount): 0.7
+短期费率(shortrate): 1.0
+
+投保单号(proposalNo): 0100303136320200003064
+保单号（批单）(policyNo): null
+批单号（批单）(endorseNo): 
+险种代码）(riskCode): 1363
+合同号 (contractNo): null
+协议号 (protocolNo): 011003030500350002
+是续保保单(isRenewed): false
+上年保险止期(lastYearEndDate): Mon Apr 20 00:00:00 CST 2020
+录入日期(inputDate): 2020-03-25 17:07:25.0
+补录日期(addInputDate): null
+签单日期(issueDate): 2020-03-25 00:00:00.0
+起保日期(startDate): 2020-04-21 00:00:00.0
+终保日期(endDate): 2021-04-20 23:59:59.0
+终保日期（批改前）(endDateBefore): null
+重复投保标志(reinsureFlag): 
+商业险手续费比例(commercialFees): 0.26
+交强险手续费比例(saliFees): 0.04
+商业险总保额(sumCommercialInsured): 1048034.2
+代理人代码(agentCode): null
+代理人名称(agentName): 
+机构代码(companyCode): 0110030305
+业务渠道(businessMode): 00
+交强险保费变化(addCommercialPrem): 0.0
+商业险保费变化(addSaliPrem): 0.0
+是注销(isCancel): false
+是退保(isSurrender): false
+是补录保单(isAddInput): false
+是批改车船税(isModifyTax): false
+加保车损险保额(addLossInsuranceAccount): 0.0
+加保盗抢险保额(addRobPlanAccount): 0.0
+是批改投保人信息(isModifyApplicantInformation): false
+是批改被保险人信息(isModifyInsuredInformation): false
+特别约定选择了其他(specialPromisedChoseOther): false
+是批改新车上牌(isModifyLicenseNo): false
+是退保交强险(isSurrenderSALI): false
+所属渠道(teamType): 6
+
+投保单号(proposalNo): 0100303136320200003064
+保单号（批单）(policyNo): 
+批单号（批单）(endorseNo): 
+合同号 (contractNo): 
+协议号 (protocolNo): 011003030500350002
+是续保保单(isRenewed): false
+上年保险止期(lastYearEndDate): Mon Apr 20 00:00:00 CST 2020
+录入日期(inputDate): 2020-03-25 17:07:25.0
+补录日期(addInputDate): null
+签单日期(issueDate): 2020-03-25 00:00:00.0
+起保日期(startDate): 2020-04-21 00:00:00.0
+终保日期(endDate): 2021-04-20 23:59:59.0
+重复投保标志(reinsureFlag): 
+终保日期（批改前）(endDateBefore): null
+商业险手续费比例(commercialFees): 0.26
+交强险手续费比例(sAliFees): 0.04
+商业险折扣率(commercialDiscount): 0.3824995077323881
+交强险折扣率(saliDiscount): 0.7
+商业险签单保费(commercialPremium): 1767.71
+交强险签单保费(saliPremium): 665.0
+需人工核保(isManualUW): false
+交强险保费变化(addCommercialPrem): 0.0
+商业险保费变化(addSaliPrem): 0.0
+是注销(isCancel): false
+是退保(isSurrender): false
+是补录保单(isAddInput): false
+合作网点(cooperateSiteCode): 0000004313
+是批改车船税(isModifyTax): false
+加保车损险保额(addLossInsuranceAccount): 0.0
+加保盗抢险保额(addRobPlanAccount): 0.0
+是批改投保人信息(isModifyApplicantInformation): false
+是批改被保险人信息(isModifyInsuredInformation): false
+特别约定选择了其他(specialPromisedChoseOther): false
+是退保交强险(isSurrenderSALI): false
+是退保商业险(isSurrenderCommercial): false
+是过户车(isTransferOwner): false
+
+投保单号(proposalNo): 0100303136320200003064
+交强签单保费(jqVerifiedFee): 896.2264150943396
+商业签单保费(commercialVerifiedFee): 896.2264150943396
+渠道核保系数(channelUnderwritingRate): 0.0
+交通违法系数(trafficIllegalRate): 0.0
+自主渠道系数(channelRate): 0.0
+自主核保系数(underwritingRate): 0.0
+险种代码(riskCode): 0801
+是否过户车(isTransforCar): false
+无赔款优待系数(noClaimFactor): 0.0
+折扣率区间(discount): 0.7
+短期费率(shortrate): 1.0
+交强险不浮动原因(extRateFloatFlag): 0
+交强险特殊车标志 (specialCarFlag): 
+商业险过户车标识 (chgOwnerFlag): 
+商业险不浮动原因(rateCDesc): 
+第三者责任险保额(thirdPartyLiabInsured): null
+车上人员责任险(司机)保额(vehiclesDriversInsured): null
+车上人员责任险(乘客)保额(vehiclesPassengerInsured): null
+是否投保盗抢险(hasTheftInsurance): null
+是否投保自燃险(hasSelfCombustionInsurance): null
+是否投保涉水险(hasWadeInsurance): null
+
+商业险投保单(pflvBOMSYProposalDto): *****  PFLVBOMProposalDto  *****
+投保单号(proposalNo): 0100303136320200003064
+交强签单保费(jqVerifiedFee): 896.2264150943396
+商业签单保费(commercialVerifiedFee): 4359.877358490567
+渠道核保系数(channelUnderwritingRate): 0.0
+交通违法系数(trafficIllegalRate): 1.0
+自主渠道系数(channelRate): 0.75
+自主核保系数(underwritingRate): 0.85
+险种代码(riskCode): 0812
+是否过户车(isTransforCar): false
+无赔款优待系数(noClaimFactor): 0.6
+折扣率区间(discount): 0.7
+短期费率(shortrate): 1.0
+
+投保单号(proposalNo): 0100303136320200003064
+交强签单保费(jqVerifiedFee): 896.2264150943396
+商业签单保费(commercialVerifiedFee): 896.2264150943396
+渠道核保系数(channelUnderwritingRate): 0.0
+交通违法系数(trafficIllegalRate): 0.0
+自主渠道系数(channelRate): 0.0
+自主核保系数(underwritingRate): 0.0
+险种代码(riskCode): 0801
+是否过户车(isTransforCar): false
+无赔款优待系数(noClaimFactor): 0.0
+折扣率区间(discount): 0.7
+短期费率(shortrate): 1.0
+交强险不浮动原因(extRateFloatFlag): 0
+交强险特殊车标志 (specialCarFlag): 
+商业险过户车标识 (chgOwnerFlag): 
+商业险不浮动原因(rateCDesc): 
+第三者责任险保额(thirdPartyLiabInsured): 0.0
+车上人员责任险(司机)保额(vehiclesDriversInsured): 0.0
+车上人员责任险(乘客)保额(vehiclesPassengerInsured): 0.0
+是否投保盗抢险(hasTheftInsurance): 
+是否投保自燃险(hasSelfCombustionInsurance): 
+是否投保涉水险(hasWadeInsurance): 
+
+商业险投保单(pflvBOMSYProposal): *****  PFLVBOMProposal  *****
+投保单号(proposalNo): 0100303136320200003064
+交强签单保费(jqVerifiedFee): 896.2264150943396
+商业签单保费(commercialVerifiedFee): 4359.877358490567
+渠道核保系数(channelUnderwritingRate): 0.0
+交通违法系数(trafficIllegalRate): 1.0
+自主渠道系数(channelRate): 0.75
+自主核保系数(underwritingRate): 0.85
+险种代码(riskCode): 0812
+是否过户车(isTransforCar): false
+无赔款优待系数(noClaimFactor): 0.6
+折扣率区间(discount): 0.7
+短期费率(shortrate): 1.0
+
+投保单号(proposalNo): 0100303136320200003064
+交强签单保费(jqVerifiedFee): 896.2264150943396
+商业签单保费(commercialVerifiedFee): 896.2264150943396
+渠道核保系数(channelUnderwritingRate): 0.0
+交通违法系数(trafficIllegalRate): 0.0
+自主渠道系数(channelRate): 0.0
+自主核保系数(underwritingRate): 0.0
+险种代码(riskCode): 0801
+是否过户车(isTransforCar): false
+无赔款优待系数(noClaimFactor): 0.0
+折扣率区间(discount): 0.7
+短期费率(shortrate): 1.0
+交强险不浮动原因(extRateFloatFlag): 0
+交强险特殊车标志 (specialCarFlag): 
+商业险过户车标识 (chgOwnerFlag): 
+商业险不浮动原因(rateCDesc): 
+第三者责任险保额(thirdPartyLiabInsured): null
+车上人员责任险(司机)保额(vehiclesDriversInsured): null
+车上人员责任险(乘客)保额(vehiclesPassengerInsured): null
+是否投保盗抢险(hasTheftInsurance): null
+是否投保自燃险(hasSelfCombustionInsurance): null
+是否投保涉水险(hasWadeInsurance): null
+
+商业险投保单(pflvBOMSYProposalDto): *****  PFLVBOMProposalDto  *****
+投保单号(proposalNo): 0100303136320200003064
+交强签单保费(jqVerifiedFee): 896.2264150943396
+商业签单保费(commercialVerifiedFee): 4359.877358490567
+渠道核保系数(channelUnderwritingRate): 0.0
+交通违法系数(trafficIllegalRate): 1.0
+自主渠道系数(channelRate): 0.75
+自主核保系数(underwritingRate): 0.85
+险种代码(riskCode): 0812
+是否过户车(isTransforCar): false
+无赔款优待系数(noClaimFactor): 0.6
+折扣率区间(discount): 0.7
+短期费率(shortrate): 1.0
+
+投保单号(proposalNo): 0100303136320200003064
+交强签单保费(jqVerifiedFee): 896.2264150943396
+商业签单保费(commercialVerifiedFee): 896.2264150943396
+渠道核保系数(channelUnderwritingRate): 0.0
+交通违法系数(trafficIllegalRate): 0.0
+自主渠道系数(channelRate): 0.0
+自主核保系数(underwritingRate): 0.0
+险种代码(riskCode): 0801
+是否过户车(isTransforCar): false
+无赔款优待系数(noClaimFactor): 0.0
+折扣率区间(discount): 0.7
+短期费率(shortrate): 1.0
+交强险不浮动原因(extRateFloatFlag): 0
+交强险特殊车标志 (specialCarFlag): 
+商业险过户车标识 (chgOwnerFlag): 
+商业险不浮动原因(rateCDesc): 
+第三者责任险保额(thirdPartyLiabInsured): 0.0
+车上人员责任险(司机)保额(vehiclesDriversInsured): 0.0
+车上人员责任险(乘客)保额(vehiclesPassengerInsured): 0.0
+是否投保盗抢险(hasTheftInsurance): 
+是否投保自燃险(hasSelfCombustionInsurance): 
+是否投保涉水险(hasWadeInsurance): 
+
+商业险投保单(pflvBOMSYProposal): *****  PFLVBOMProposal  *****
+投保单号(proposalNo): 0100303136320200003064
+交强签单保费(jqVerifiedFee): 896.2264150943396
+商业签单保费(commercialVerifiedFee): 4359.877358490567
+渠道核保系数(channelUnderwritingRate): 0.0
+交通违法系数(trafficIllegalRate): 1.0
+自主渠道系数(channelRate): 0.75
+自主核保系数(underwritingRate): 0.85
+险种代码(riskCode): 0812
+是否过户车(isTransforCar): false
+无赔款优待系数(noClaimFactor): 0.6
+折扣率区间(discount): 0.7
+短期费率(shortrate): 1.0
+
+
+
+
+=======================================================================================
+投保单号(proposalNo):0070102110120200004764
+保单号(policyNo):
+协议号(protocolNo):010701020800200002
+子协议号(solutionCode):
+批单号(endorseNo):
+业务来源(policySort):I
+是自动核保(isAutoUW):true
+是关联投保(isRelInsured):false
+录入日期(inputDate):2020-03-27 10:16:42.0
+起保时间(startDate):2020-03-28 00:00:00.0
+终保时间(endDate):2021-03-27 23:59:59.0
+倒签天数(issueDays):0
+被保险人最小年龄(minInsuredAge):52
+被保险人最大年龄(maxInsuredAge):52
+被保险人年龄(天)(dayOfInsuredAge):0
+被保险人累计风险金额(sumHistoryInsured):0.0
+套餐名称(comboName):
+套餐代码(comboCode):
+批减保费金额(lowerPremium):0.0
+机构代码(branchCode):0107010208
+保单累计风险保额(sumInsured):1500000.0
+总保费(sumGrossPremium):18.0
+被保险人最高职业(maxInsuredOccu):0
+是注销(isCancel):false
+是退保(isSurrender):false
+是再保(isReinsurance):false
+是共保(isCoinsInd):false
+是预约(isOpenCoverInd):false
+投保份数(count):1.0
+借款金额(loanAmount):0.0
+受益人名称(benifitName):null,
+产品方案号(programmeCode):
+特约信息(specialInfo):
+投保人代码(applicantCode):I0707469016
+投保人类型(appliType):
+投被保人是否一致(insuredSameInd):null
+
+投保单号(proposalNo):0070102110120200004764
+保单号(policyNo):
+协议号(protocolNo):010701020800200002
+子协议号(solutionCode):
+批单号(endorseNo):
+业务来源(policySort):I
+是自动核保(isAutoUW):true
+是关联投保(isRelInsured):false
+录入日期(inputDate):2020-03-27 10:16:42.0
+起保时间(startDate):2020-03-28 00:00:00.0
+终保时间(endDate):2021-03-27 23:59:59.0
+当前时间(nowDate):Fri Mar 27 10:16:46 CST 2020
+天数(days):0
+:1585275406589
+:1585324800000
+:Fri Mar 27 10:16:46 CST 2020
+倒签天数(issueDays):0
+被保险人最小年龄(minInsuredAge):52
+被保险人最大年龄(maxInsuredAge):52
+批减保费金额(lowerPremium):0.0
+机构代码(branchCode):0107010208
+保单累计风险保额(sumInsured):1500000.0
+总保费(sumGrossPremium):18.0
+被保险人最高职业(maxInsuredOccu):0
+是注销(isCancel):false
+是退保(isSurrender):false
+是再保(isReinsurance):false
+产品方案号(programmeCode):
+特约信息(specialInfo):
+投保人代码(applicantCode):I0707469016
+投保人类型(appliType):
+投被保人是否一致(insuredSameInd):
+投保人邮箱(applicantEmail):
+投保人证件号(applicantCardNo):
+投保人出生日期(applicantBirthDate):1967-11-20 00:00:00.0
+销售渠道(businessMode):

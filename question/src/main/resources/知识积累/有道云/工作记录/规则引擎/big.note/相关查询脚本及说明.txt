@@ -1,0 +1,118 @@
+--（1）保费计算前获取到跟单表的因子数据 （拿到询价号：V_QUOTE_NO）
+SELECT * FROM WEB_GB_RULE_PLY_FACTOR ;
+
+--（2）光博因子存储过程：GB_AUTO_FEE
+   1，入参：  V_QUOTE_NO
+   2，出参：   C_RULE_ID           规则ID
+               REGIONALDISCFLOOR   行业自律底限
+               UWDISCLIMIT         非锁定核保折扣上限
+               UWDISCFLOOR	   非锁定核保折扣下限
+               RegionalDiscTop     行业自律上限
+               FloatDiscPercent    精算折扣比例
+               MaxLossRatio        最大赔付率
+               FixLossRatio        固定赔付率
+               NIssueRate          绩效比例
+               NFeeRate            手续费比例
+               CFeeRelate          是否费折联动方案（0否，1是）
+
+
+
+说明：以下是跟单表的因子数据
+
+comment on table PCIS.WEB_GB_RULE_PLY_FACTOR
+  is '光博浮动规则因子表';
+-- Add comments to the columns 
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_quote_no
+  is '报价单号';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003601
+  is '机构编码';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003602
+  is '产品编码';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003603
+  is '业务来源(一级渠道)';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003604
+  is '渠道中级分类(二级渠道)';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003605
+  is '渠道子类(三级渠道)';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003606
+  is '代理人代码';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003607
+  is '总保额值';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003608
+  is '业务属性(转续保标识)';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003609
+  is '出单来源';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003801
+  is '车牌号';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003802
+  is '车辆种类';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003803
+  is '车辆使用性质';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003804
+  is '车辆种类细分(机动车种类)';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003805
+  is '工信部车型分类(交管车辆类型)';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003806
+  is '新车标识';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003807
+  is '过户车标识';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003808
+  is '异地标识';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003809
+  is '团车标志号(协议号)';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003810
+  is '核定载质量';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003811
+  is '座位';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003812
+  is '新车购置价';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003813
+  is '实际价值';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003814
+  is '车龄';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003815
+  is '车辆品牌';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003816
+  is '发动机号';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003817
+  is '车架号';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003818
+  is '查询码';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_004401
+  is '被保险人名称';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_004402
+  is '被保人性质';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003901
+  is '上年无赔优待(无赔款优待)';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003902
+  is '自主核保系数';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003903
+  is '自主渠道系数';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003904
+  is '总折扣';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003905
+  is '赔付率';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003906
+  is '无赔优浮动原因';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003907
+  is '无赔优不浮动原因';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003908
+  is '交强浮动原因';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_004001
+  is '车损保额';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_004002
+  is '投保险别(主险)';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_004501
+  is '驾驶人性别';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_004502
+  is '驾驶人年龄';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_004503
+  is '驾龄';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003610
+  is '渠道编码';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_003611
+  is '渠道标识';
+comment on column PCIS.WEB_GB_RULE_PLY_FACTOR.c_004403
+  is '方案号';
+
+

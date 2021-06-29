@@ -1,0 +1,156 @@
+--光博存储过程
+CREATE OR REPLACE PROCEDURE PCIS.GB_AUTO_FEE(V_QUOTE_NO           IN VARCHAR2,
+                                     C_RULE_ID          OUT VARCHAR2,
+                                     REGIONALDISCFLOOR OUT NUMBER,
+                                     UWDISCLIMIT   OUT NUMBER,
+                                     UWDISCFLOOR  OUT NUMBER,
+                                     RegionalDiscTop OUT NUMBER,
+                                     FloatDiscPercent OUT NUMBER,
+                                     MaxLossRatio OUT NUMBER,
+                                     FixLossRatio OUT NUMBER,
+                                     NIssueRate OUT NUMBER,
+                                     NFeeRate OUT NUMBER,
+                                     CFeeRelate  OUT VARCHAR2
+                                     ) IS
+
+  V_FLAG  VARCHAR2(30);
+  V_COUNT NUMBER;
+  V_PRIORITY NUMBER;
+  V_SQL   VARCHAR2(8000);
+  V_NO_DATA_FLAG VARCHAR2(30);
+
+  --查询需要匹配的规则主表
+  CURSOR FEE_INFO(V_QUOTE_NO varchar2) IS
+    SELECT FEE.C_RULE_ID,
+           FEE.REGIONALDISCFLOOR,
+           FEE.UWDISCLIMIT,
+           FEE.UWDISCFLOOR,
+           FEE.RegionalDiscTop,
+           FEE.FloatDiscPercent,
+           FEE.MaxLossRatio,
+           FEE.FixLossRatio,
+           FEE.C_PRIORITY,
+           FEE.N_ISSUE_RATE,
+           FEE.N_FEE_RATE,
+           FEE.C_FEE_RELATE,
+           FEE.C_SQL
+      FROM web_gb_rule_float FEE,web_gb_rule_ply_factor BASE,WEB_ORG_DPT DPT1
+     WHERE BASE.C_003601 = DPT1.C_DPT_CDE
+       AND INSTR(FEE.C_PROD_NO,(SELECT B.C_003602 FROM web_gb_rule_ply_factor B where B.C_QUOTE_NO = V_QUOTE_NO))>0
+      /* AND INSTR(FEE.C_CHA_CLS,(SELECT B.C_003603 FROM web_gb_rule_ply_factor B where B.C_QUOTE_NO = V_QUOTE_NO))>0
+       */AND INSTR(FEE.C_NEW_MRK,(SELECT B.c_003806 FROM web_gb_rule_ply_factor B where B.C_QUOTE_NO = V_QUOTE_NO))>0
+        AND ((FEE.C_LOAD_SUB = '1' AND
+         (EXISTS
+          (SELECT DPT2.C_DPT_REL_CDE
+             FROM WEB_ORG_DPT DPT2
+            WHERE DPT2.C_DPT_CDE = FEE.C_DPT_CDE
+              AND (DPT1.C_DPT_REL_CDE LIKE DPT2.C_DPT_REL_CDE || '%')))) OR
+         (FEE.C_LOAD_SUB = '0' AND INSTR(FEE.C_DPT_CDE,(SELECT B.C_003601 FROM web_gb_rule_ply_factor B WHERE B.C_QUOTE_NO = V_QUOTE_NO)) > 0))
+       AND BASE.C_QUOTE_NO = V_QUOTE_NO
+       AND FEE.C_IS_VALID = '1'
+       AND FEE.C_LATEST_MRK = '1';
+
+  --查询规则因子明细
+  CURSOR FACTOR_INFO(RULE_ID varchar2) IS
+    SELECT FACTOR.C_FACTOR_CDE,
+           FACTOR.C_START_VALUE,
+           FACTOR.C_END_VALUE,
+           FACTOR.C_IDENTITY
+      FROM web_gb_rule_factor FACTOR
+     WHERE FACTOR.C_RULE_ID = RULE_ID
+       AND FACTOR.C_IS_VALID = '1'
+       AND FACTOR.C_LATEST_MRK = '1';
+
+BEGIN
+
+  BEGIN
+    C_RULE_ID          := '';
+    REGIONALDISCFLOOR := 0;
+    UWDISCLIMIT   := 0;
+    UWDISCFLOOR  := 0;
+    RegionalDiscTop := 0;
+    FloatDiscPercent := 0;
+    MaxLossRatio := 0;
+    FixLossRatio := 0;
+    V_COUNT            := 0;
+    V_PRIORITY         := 0;
+     NIssueRate := 0;
+      NFeeRate := 0;
+      CFeeRelate  := '';
+
+    FOR FEE IN FEE_INFO(V_QUOTE_NO) LOOP
+      IF(FEE.C_SQL IS NOT NULL) THEN
+        V_SQL := FEE.C_SQL;
+      ELSE
+        V_SQL   := 'SELECT 1 FROM web_gb_rule_ply_factor WHERE C_QUOTE_NO=0 ';
+        FOR FACTOR IN FACTOR_INFO(FEE.C_RULE_ID) LOOP
+          IF FACTOR.C_IDENTITY = '1' THEN
+            V_SQL := V_SQL || ' AND (C_' || FACTOR.C_FACTOR_CDE  || ' BETWEEN ' ||
+                     FACTOR.C_START_VALUE || ' AND ' || FACTOR.C_END_VALUE || ') ';
+          ELSIF FACTOR.C_IDENTITY = '2' THEN
+            V_SQL := V_SQL || ' AND (C_' || FACTOR.C_FACTOR_CDE || ' = ''' ||
+                     FACTOR.C_START_VALUE || ''')';
+          ELSIF FACTOR.C_IDENTITY = '3' THEN
+            V_SQL := V_SQL || 'AND (C_' || FACTOR.C_FACTOR_CDE  ||' IN(' ||
+                     FACTOR.C_START_VALUE || ') )';
+          ELSIF FACTOR.C_IDENTITY = '4' THEN
+            V_SQL := V_SQL || ' AND (C_' || FACTOR.C_FACTOR_CDE  || ' LIKE ''' ||
+                     FACTOR.C_START_VALUE || '%'')';
+          END IF;
+        END LOOP;
+      END IF;
+
+      BEGIN
+        --更新查询语句到费用比例表
+        IF(FEE.C_SQL IS NULL) THEN
+          UPDATE web_gb_rule_float F SET F.C_SQL=V_SQL WHERE F.C_RULE_ID=FEE.C_RULE_ID AND F.C_LATEST_MRK='1';
+          COMMIT;
+        END IF;
+        --执行规则，V_FLAG字段没有意义，用于触发NO_DATA_FOUND异常
+        V_SQL := REPLACE(V_SQL,'C_QUOTE_NO=0','C_QUOTE_NO='''||V_QUOTE_NO||''' ');
+        DBMS_OUTPUT.PUT_LINE(SUBSTR(V_SQL, 1, 1900));
+       -- DBMS_OUTPUT.PUT_LINE(SUBSTR(V_SQL, 1900, LENGTH(V_SQL)));
+        EXECUTE IMMEDIATE V_SQL
+          INTO V_FLAG;
+
+        IF (V_COUNT = 0 OR FEE.C_PRIORITY > V_PRIORITY
+            OR (V_PRIORITY = FEE.C_PRIORITY AND REGIONALDISCFLOOR > FEE.REGIONALDISCFLOOR)
+            OR (V_PRIORITY = FEE.C_PRIORITY AND RegionalDiscTop > FEE.RegionalDiscTop)
+            OR (V_PRIORITY = FEE.C_PRIORITY AND MaxLossRatio > FEE.MaxLossRatio)
+            OR (V_PRIORITY = FEE.C_PRIORITY AND FixLossRatio > FEE.FixLossRatio)
+            OR (V_PRIORITY = FEE.C_PRIORITY AND UWDISCLIMIT > FEE.UWDISCLIMIT)
+             OR (V_PRIORITY = FEE.C_PRIORITY AND UWDISCFLOOR > FEE.UWDISCFLOOR)
+             OR (V_PRIORITY = FEE.C_PRIORITY AND FloatDiscPercent > FEE.FloatDiscPercent)) THEN
+          C_RULE_ID          := FEE.C_RULE_ID;
+          REGIONALDISCFLOOR := FEE.REGIONALDISCFLOOR;
+          UWDISCLIMIT   := FEE.UWDISCLIMIT;
+          UWDISCFLOOR  := FEE.UWDISCFLOOR;
+          RegionalDiscTop :=FEE.RegionalDiscTop;
+          MaxLossRatio :=FEE.MaxLossRatio;
+          FixLossRatio :=FEE.FixLossRatio;
+          FloatDiscPercent :=FEE.FloatDiscPercent;
+          V_PRIORITY   := FEE.C_PRIORITY;
+          NIssueRate   := FEE.N_ISSUE_RATE;
+          NFeeRate   := FEE.N_FEE_RATE;
+          CFeeRelate   := FEE.C_FEE_RELATE;
+
+        END IF;
+
+      V_NO_DATA_FLAG := '0';
+      EXCEPTION
+        --不满足规则条件
+        WHEN NO_DATA_FOUND THEN
+          V_NO_DATA_FLAG := '1';
+        WHEN OTHERS THEN
+          null;
+      END;
+      IF(V_NO_DATA_FLAG = '0') THEN
+        V_COUNT := V_COUNT + 1;
+      END IF;
+    END LOOP;
+  EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+      --匹配不到规则主档表数据
+      null;
+  END;
+END;

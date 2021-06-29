@@ -1,0 +1,28 @@
+ Select
+        Round(n.Target_Value /
+        (Select Count(1)
+        From System_Work_Day
+        Where Work_Date Between (SELECT TRUNC (TO_DATE('20191031', 'yyyy-MM-dd'), 'yyyy')	FROM DUAL)  And (SELECT	ADD_MONTHS (TRUNC(TO_DATE('20191031', 'yyyy-MM-dd'), 'yyyy'), 12) - 1  FROM DUAL)
+        And Is_Work = '1'),
+        2) DAYTARGET,
+        Round(n.Target_Value *
+        (Select Count(1)
+        From System_Work_Day
+        Where Work_Date Between (select   trunc(TO_DATE('20191031', 'yyyy-MM-dd'),'MM') FROM DUAL ) And ( select last_day(TO_DATE('20191031', 'yyyy-MM-dd'))   from dual)
+        And Is_Work = '1') /
+        (Select Count(1)
+        From System_Work_Day
+        Where Work_Date  Between(SELECT TRUNC (TO_DATE('20191031', 'yyyy-MM-dd'), 'yyyy')	FROM DUAL)  And (SELECT	ADD_MONTHS (TRUNC(TO_DATE('20191031', 'yyyy-MM-dd'), 'yyyy'), 12) - 1  FROM DUAL)
+        And Is_Work = '1'),
+        2) MONTHTARGET,
+        n.Target_Value YEARTARGET
+        From
+        Stat_Item_Target n
+        Where
+        1=1
+        and n.ANNUAL='2019'
+        and n.BRANCH_CODE = '01'
+        and n.PRODUCT_CODE ='P00'
+        and n.CHANNEL_CODE ='0'
+        and n.RISK_LINE ='C00'
+				and n.ITEM_CODE ='ZB000001'

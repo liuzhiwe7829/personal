@@ -1,0 +1,679 @@
+2020-06-08 09:53:14,915  INFO  [ACTIVE] ExecuteThread: '1' for queue: 'weblogic.kernel.Default (self-tuning)' com.sinolife.sf.ruleengine.service.impl.RuleEngineServiceImpl  [/172.27.1.150//sfilogrules/rpc/com.sinolife.rm.rmservice]  *****  UWBOMProposal
+Dto  *****
+保单类型(policyType): T
+投保单号(proposalNo): 0080304080120200012596
+保单号（批单）(policyNo): null
+批单号（批单）(endorseNo):
+险种代码）(riskCode): 0801
+合同号 (contractNo): null
+协议号 (protocolNo): 010803040200200014
+是续保保单(isRenewed): false
+上年保险止期(lastYearEndDate): null
+录入日期(inputDate): 2020-06-08 09:52:42.0
+补录日期(addInputDate): null
+签单日期(issueDate): 2020-06-08 00:00:00.0
+起保日期(startDate): 2020-06-09 00:00:00.0
+终保日期(endDate): 2021-06-08 23:59:59.0
+终保日期（批改前）(endDateBefore): null
+重复投保标志(reinsureFlag):
+商业险手续费比例(commercialFees): 0.0
+交强险手续费比例(saliFees): 0.04
+商业险总保额(sumCommercialInsured): 0.0
+代理人代码(agentCode): null
+代理人名称(agentName):
+机构代码(companyCode): 0108030402
+业务渠道(businessMode): 00
+交强险保费变化(addCommercialPrem): 0.0
+商业险保费变化(addSaliPrem): 0.0
+是注销(isCancel): false
+是退保(isSurrender): false
+是补录保单(isAddInput): false
+是批改车船税(isModifyTax): false
+加保车损险保额(addLossInsuranceAccount): 0.0
+加保盗抢险保额(addRobPlanAccount): 0.0
+是批改投保人信息(isModifyApplicantInformation): false
+是批改被保险人信息(isModifyInsuredInformation): false
+特别约定选择了其他(specialPromisedChoseOther): false
+是批改新车上牌(isModifyLicenseNo): false
+是退保交强险(isSurrenderSALI): false
+所属渠道(teamType): 1
+是退保商业险(isSurrenderCommercial): false
+批改项目列表(endorseItems):
+允许自动核保(autoUnderwrite): false
+出单员代码(operatorCode): sy-sxhm@chinacriagent.com
+批改生效日期(endorseEffDate): Mon Jun 08 09:53:14 CST 2020
+批单录入日期(endorseInputDate): Mon Jun 08 09:53:14 CST 2020
+加费比例(addupPercent): 0.0
+总保额(sumInsured): 122000.0
+总标准保费合计(sumBenchmarkPremium): 0.0
+商业险标准保费合计(sumCommercialBenchmarkPremium): 0.0
+商业险实交保费合计(sumCommercialGrossPremium): 0.0
+实交保费合计(sumGrossPremium): 950.0
+总签单保费(grossPremium): 0.0
+用户费用(hopeFee): 0.0
+用户折扣(hopeRate): 0.0
+成本保费(costPremium): 0.0
+成本保费折扣(costRate): 0.0
+业务渠道(businessMode): 00
+险别数目(PlanCount): 1
+附加险数目(AdditionalPlanCount): 0
+折扣率(discount): 0.0
+保险期限(日)(insuranceDays): 365
+无理赔系数(noClaimFactor): 0.0
+交强险即时生效标志(effectFlag):null
+合作网点(cooperateSiteCode):0000021218
+被保车辆(vehicle): *****  UWBOMVehicleDto  *****
+使用性质(useAttribute): 02
+车辆种类(vehicleKindCode): 100
+车辆细类(vehicleKindCodeShow): 11
+车辆细类(批改前)(vehicleKindCodeShowBefore):
+车辆种类（批改前）(vehicleKindCodeBefore):
+初登日期(enrollDate): 2011-03-16 00:00:00.0
+购置日期(purchaseDate): 2011-03-16 00:00:00.0
+发证日期(certificateDate): 2017-03-14 00:00:00.0
+发证日期（批改前）(certificateDateBefore): null
+厂牌型号别名(vehicleTypeName): 奔驰BENZ GLK300越野车
+厂牌型号别名（批改前）(vehicleTypeNameBefore):
+打印厂牌型号(printModelName): 奔驰BENZ GLK300越野车
+车牌号码(licenseNo): 鲁E1X651
+车牌号码（批改前）(licenseNoBefore):
+车牌号码（批改前）(licenseNoBefore):
+跨省首年投保未出险年数(noClaimYears): 0
+是过户车(isTransferOwner): false
+是新车(isNewVehicle): false
+号牌种类(licenseNoType): 02
+核定座位数(checkSeatCount): 5
+核定座位数（批改前）(checkSeatCountBefore): 0
+核定载质量(千克)(tonCount): 0.0
+核定载质量(千克)（批改前）(tonCountBefore): 0.0
+核定载质量(千克)-精友参考(tonCountRef): 0.0
+排气量(exhaustScale): 2996.0
+排气量（批改前）(exhaustScaleBefore): 0.0
+排气量-精友参考(exhaustScaleRef): 2996.0
+新车购置价(purchasePrice): 448000.0
+新车购置价（批改前）(purchasePriceBefore): 0.0
+类比价格（含税）(compPrice): 0.0
+实际价值(actualValue): 152320.0
+实际价值(没有20%的限制)(actualRealValue): 152320.0
+验车情况(vehicleCheckStatus): 2
+功率(power): 170.0
+车辆类型(vehicleType): K33
+发动机号(engineNo): 27294831756579
+车架号(frameNo): WDCGG8BB7BF617333
+VIN码(vinNo):
+车辆用途(vehiclePurpose): 01
+车辆用途（批改前）(vehiclePurposeBefore):
+车龄(年)(usedYears): 9.0
+验车情况(checkSituation):
+行驶区域(runAreaCode): 02
+是否异形车(specialShapedInd): 0
+纯风险保费标志(pureRiskPremiumFlag):
+费改实际价值(consultActualValue): 152320.0
+整备质量(completeKerbMass): 0.0
+团车业务编号(groupCode): null
+能源类型(powerType): 汽油
+车型新分类(newCarModel): 中型SUV
+生产国别(originCountry): 进口车
+交管车辆类型(vehicleCategory):
+交管车辆类型（批改前）(vehicleCategoryBefore):
+过户标志(chgOwnerFlag):
+过户标志（批改前）(chgOwnerFlagBefore):
+上年车牌号(lastLicenseNo):
+品牌名称(carBrand): 梅赛德斯-奔驰
+产品组合(productCombination): 1
+投保习惯(insuredHabit): 1
+行驶里程(runMiles): 0.0
+*****  重载联网数据   *****
+驾驶行为全国评分(drivingBehaviorCountryScore):
+驾驶行为本省评分(drivingBehaviorProvinceScore):
+
+关联保单的被保车辆(subProposalVehicle): null
+投保人(applicant): *****  UWBOMApplicantDto  *****
+编码(appCode): I0807848128
+投保人名称(appName): 张珊珊
+投保人名称(批改前）(appNameBefore):
+类型(appType): 1
+类型(批改前）(appTypeBefore):
+账户名(accountName):
+账户号(accountCode): null
+开户行(accountBank): null
+证件号码(cardNo): 370502198911225228
+证件类型(cardType): 01
+出生日期(birthDate): 1989-11-22 00:00:00.0
+投保人与缴费人关系(paymentRelationCode): 01
+投保人地址(insuredAddress): 山东省
+
+被保险人(insured): *****  UWBOMDriverDto  *****
+姓名(insuredName): 张珊珊
+姓名（批改前）(insuredNameBefore):
+证件号码(cardNo): 370502198911225228
+证件类型(cardType): 01
+出生日期(birthDay): 1989-11-22 00:00:00.0
+类型(insuredType): 1
+类型（批改前）(insuredTypeBefore):
+与车辆关系(insuredVehicleRelation):
+性质(insuredAttribute):
+是VIP客户(isVIP): false
+被保险人地址(insuredAddress): 山东省
+
+车主(vehicleOwner): *****  UWBOMVehicleOwnerDto  *****
+车主名称(vehicleOwnerName): 张珊珊
+车主名称（批改前）(vehicleOwnerNameBefore):
+车主性质(vehicleOwnerCharacter): 01
+车主证件类型(vehicleOwnerCardType): 01
+车主证件号码(vehicleOwnerCardNo): 370502198911225228
+出生日期(birthDay): Wed Nov 22 00:00:00 CST 1989
+
+销售费用信息(sfList):
+        ****  UWBOMSalesFeeDto  ****
+险种代码(riskCode):0801
+费用类型(feeType):220
+币别(currency):
+费用比例(feePercent):3.63
+规则Id(ruleId):
+业务分类(businessClass):
+费用金额(feeAmount):32.53
+
+        ****  UWBOMSalesFeeDto  ****
+险种代码(riskCode):0801
+费用类型(feeType):317
+币别(currency):
+费用比例(feePercent):0.0
+规则Id(ruleId):
+业务分类(businessClass):
+费用金额(feeAmount):0.0
+
+        ****  UWBOMSalesFeeDto  ****
+险种代码(riskCode):0801
+费用类型(feeType):306
+币别(currency):
+费用比例(feePercent):31.0
+规则Id(ruleId):
+业务分类(businessClass):
+费用金额(feeAmount):277.83
+
+        ****  UWBOMSalesFeeDto  ****
+险种代码(riskCode):0801
+费用类型(feeType):313
+币别(currency):
+费用比例(feePercent):0.0
+规则Id(ruleId):
+业务分类(businessClass):
+费用金额(feeAmount):0.0
+
+        ****  UWBOMSalesFeeDto  ****
+险种代码(riskCode):
+费用类型(feeType):303
+币别(currency):
+费用比例(feePercent):0.0
+规则Id(ruleId):
+业务分类(businessClass):
+费用金额(feeAmount):0.0
+
+        ****  UWBOMSalesFeeDto  ****
+险种代码(riskCode):
+费用类型(feeType):314
+币别(currency):
+费用比例(feePercent):0.0
+规则Id(ruleId):
+业务分类(businessClass):
+费用金额(feeAmount):0.0
+
+险别列表(plans):
+        *****  UWBOMPlanDto  *****
+险别名称(kindName): 机动车交通事故责任强制险
+险别代码(kindCode): 0801BZ
+是附加险(isAdditionalPlan): false
+保额/限额(sumInsured): 122000.0
+是否投保不计免赔(isInsuredNoDeductiblePlan): false
+免赔额(deductible): 0.0
+投保座位数(insuredSeats): 0
+标准保费(benchmarkPremium): 950.0
+实交保费(grossPremium): 950.0
+折扣率(discount): 0.0
+投保档次(insureGrade): 1
+费率(rate): 0.0
+短期费率(shortRate): 100.0
+
+险别列表（批改前）(plans):
+上年险别列表(lastPalns):
+驾驶人列表(driver):
+车船税信息(tax): *****  UWBOMTaxDto  *****
+缴费标志(taxPaidFlag): 02
+缴费标志-精友参考(taxPaidFlagRef): 0
+缴费标志-平台(taxPaidFlagCi): 2
+滞纳金(lateFee): 0.0
+税额合计(sumPayTax): 1800.0
+纳税人名称(taxpayerName): 张珊珊
+纳税人证件类型(taxpayerCardType): null
+纳税人证件号码(taxpayerCardNo): null
+纳税人识别码(taxpayerIdCode): 370502197606262829
+完税凭证号(paidFreeCertificate):
+
+整车库信息(vehicleReference): *****  UWBOMVehicleReferenceDto  *****
+车系名称(familyName): 奔驰GLK级
+厂牌型号代码(modelCode): BCI1503DGB
+厂牌型号名称(modelName): 奔驰BENZ GLK300越野车
+新车购置价(purchasePrice): 486291.0
+类比价格(含税)(compPrice): 0.0
+座位数(checkSeatCount): 5
+核定载质量(tonCount): 0.0
+车型推荐标志(modelFlag):
+
+新转续标识(newTransfer): 3
+行业车型编码(tradeModelCode):
+平台车型编码(platformModelCode): null
+上年赔款记录(lastYearClaims): 2000.0
+业务员代码(salesmanCode): S000003336
+不浮动原因(noAdjustReason):
+影像附件是否上传(isImageUpload): 未上传
+渠道类型(channelType): 0203
+渠道小类(channelTip): 02030101
+中介代码(intermediaryCode): 078000012892
+中介名称(intermediaryName): 华明保险代理有限公司辽宁分公司
+佣金类型0801(commissionType0801): 代理手续费
+佣金类型0812(commissionType0812):
+与往年车主姓名不一致(isCarOwnerName): true
+关联单标识(isRelation): false
+车型编码校验(carModelCodeValid): null
+商业险折扣率(commercialDiscount): 0.0
+交强险折扣率(saliDiscount): 1.0
+商业险签单保费(commercialPremium): 0.0
+交强险签单保费(saliPremium): 950.0
+商业险纯风险保费-定价(baseDangerPremiumComm): 0.0
+交强险纯风险保费-定价(baseDangerPremiumSali): 609.95
+商业险精准费用率-定价(exactFeeComm): 0.0
+交强险精准费用率-定价(exactFeeSali): 4.0
+双录校验(doubleRecordValid):
+退款人名称(refundName):
+投保单特殊标识(proposalSpecialType): 00
+是否黑名单用户(isBlackListed): null
+车系风险等级(carSystemRiskGrade): D类
+寿险业务员名称(outerUserCName):
+业务员名称(salesManCName): 宫敏
+销售人员名称(salesManSZCName):
+联系人名称(contactCName): 张珊珊
+交强险信息(saliReference): *****  UWBOMSALIDto  *****
+浮动比率(floatingRateSALI): 1.0
+标准保费(benchmarkPremium): 950.0
+保费(grossPremium): 950.0
+
+优惠系数(FactorList):
+平台返回信息列表(insureDemand):
+优惠系数具体信息(rpList):
+寿险业务员名称（outerUserCName）:
+业务员(salesManCName)：宫敏
+销售人员名称(salesManSZCName)：
+联系人(contactCName)：张珊珊
+签单预期赔付率(issuePrepaidRate)：59.83
+新业务价值率(businessValueRate)：1.54
+特约列表(specialClauses):
+        *****  UWBOMSpecialClausesDto  *****
+险种代码(riskCode)：0801
+特别约定代码(clauseCode)：1001
+特别约定代码内容(clauseContext)：为更好地保障您的权益,请您在发生保险事故后保留出险第一现场,并立即致电24小时服务电话:4006695535。
+
+        *****  UWBOMSpecialClausesDto  *****
+险种代码(riskCode)：0801
+特别约定代码(clauseCode)：1061
+特别约定代码内容(clauseContext)：尊敬的客户：投保次日起，您可以通过本公司网站www.fundins.com、服务电话40066-95535或营业网点柜台查询保险单及理赔信息。若对查询结果有异议，可通过网上留言或拨打服务电话联系本公司。
+
+        *****  UWBOMSpecialClausesDto  *****
+险种代码(riskCode)：0801
+特别约定代码(clauseCode)：1062
+特别约定代码内容(clauseContext)：本保单为一次性打印，一经涂改或无 保险人 签章无效。
+
+        *****  UWBOMSpecialClausesDto  *****
+险种代码(riskCode)：0801
+特别约定代码(clauseCode)：1089
+特别约定代码内容(clauseContext)：本保险车辆的行驶证车主为：张珊珊，投保人为：张珊珊，与车主关系为：本人
+
+
+2020-06-08 09:53:14,916  INFO  [ACTIVE] ExecuteThread: '1' for queue: 'weblogic.kernel.Default (self-tuning)' com.sinolife.sf.ruleengine.service.impl.RuleEngineServiceImpl  [/172.27.1.150//sfilogrules/rpc/com.sinolife.rm.rmservice]  ----rules  invoke executeRules inputmap={inParam=*****  UWBOMProposal  *****
+保单类型(policyType): T
+投保单号(proposalNo): 0080304080120200012596
+保单号（批单）(policyNo):
+批单号（批单）(endorseNo):
+合同号 (contractNo):
+协议号 (protocolNo): 010803040200200014
+是续保保单(isRenewed): false
+上年保险止期(lastYearEndDate): null
+录入日期(inputDate): 2020-06-08 09:52:42.0
+补录日期(addInputDate): null
+签单日期(issueDate): 2020-06-08 00:00:00.0
+起保日期(startDate): 2020-06-09 00:00:00.0
+终保日期(endDate): 2021-06-08 23:59:59.0
+重复投保标志(reinsureFlag):
+终保日期（批改前）(endDateBefore): null
+商业险手续费比例(commercialFees): 0.0
+交强险手续费比例(sAliFees): 0.04
+商业险折扣率(commercialDiscount): 0.0
+交强险折扣率(saliDiscount): 1.0
+商业险签单保费(commercialPremium): 0.0
+交强险签单保费(saliPremium): 950.0
+需人工核保(isManualUW): false
+交强险保费变化(addCommercialPrem): 0.0
+商业险保费变化(addSaliPrem): 0.0
+是注销(isCancel): false
+是退保(isSurrender): false
+是补录保单(isAddInput): false
+合作网点(cooperateSiteCode): 0000021218
+是批改车船税(isModifyTax): false
+加保车损险保额(addLossInsuranceAccount): 0.0
+加保盗抢险保额(addRobPlanAccount): 0.0
+是批改投保人信息(isModifyApplicantInformation): false
+是批改被保险人信息(isModifyInsuredInformation): false
+特别约定选择了其他(specialPromisedChoseOther): false
+是退保交强险(isSurrenderSALI): false
+是退保商业险(isSurrenderCommercial): false
+是过户车(isTransferOwner): false
+是批改新车上牌(isModifyLicenseNo): false
+所属渠道(teamType): 1
+批改项目列表(endorseItems):
+允许自动核保(autoUnderwrite): false
+出单员代码(operatorCode): sy-sxhm@chinacriagent.com
+批改生效日期(endorseEffDate): 00
+加费比例(businessMode): 00
+是单保责任险(isSingleResponsibilityPlan): false
+是单保车损险(isSingleLossVehiclePlan): false
+是单保盗抢险(isSingleRobPlan): false
+是单保交强险(isSingleSALI): false
+是单保车上人员险(isSingleCarInsurancePersonnel): false
+商业险总保额(sumCommercialInsured): 0.0
+代理人代码(agentCode):
+代理人名称(agentName):
+机构代码(companyCode): 0108030402
+业务渠道(businessMode): 00
+总保额(sumInsured): 122000.0
+总标准保费合计(sumBenchmarkPremium): 0.0
+商业险标准保费合计(sumCommercialBenchmarkPremium): 0.0
+商业险实交保费合计(sumCommercialGrossPremium): 0.0
+实交保费合计(sumGrossPremium): 950.0
+总签单保费(grossPremium): 0.0
+期望费用(hopeFee): 0.0
+期望折扣(hopeRate): 0.0
+成本保费(costPremium): 0.0
+成本保费折扣(costRate): 0.0
+交强险即时生效标志(effectFlag):
+被保车辆(vehicle): *****  UWBOMVehicleDto  *****
+使用性质(useAttribute): 02
+车辆种类(vehicleKindCode): 100
+车辆细类(vehicleKindCodeShow): 11
+车辆细类（批改前）(vehicleKindCodeShowBefore):
+车辆种类（批改前）(vehicleKindCodeBefore):
+初登日期(enrollDate): 2011-03-16 00:00:00.0
+购置日期(purchaseDate): 2011-03-16 00:00:00.0
+发证日期(certificateDate): 2017-03-14 00:00:00.0
+发证日期（批改前）(certificateDateBefore): null
+厂牌型号别名(vehicleTypeName): 奔驰BENZ GLK300越野车
+厂牌型号别名（批改前）(vehicleTypeNameBefore):
+车牌号码(licenseNo): 鲁E1X651
+车牌号码（批改前）(licenseNoBefore):
+跨省首年投保未出险年数(noClaimYears): 0
+号牌种类(licenseNoType): 02
+核定座位数(checkSeatCount): 5
+核定座位数（批改前）(checkSeatCountBefore): 0
+核定载质量(千克)(tonCount): 0.0
+核定载质量(千克)（批改前）(tonCountBefore): 0.0
+核定载质量(千克)-精友参考(tonCountRef): 0.0
+排气量(exhaustScale): 2996.0
+排气量（批改前）(exhaustScaleBefore): 0.0
+排气量-精友参考(exhaustScaleRef): 2996.0
+新车购置价(purchasePrice): 448000.0
+新车购置价（批改前）(purchasePriceBefore): 0.0
+实际价值(actualValue): 152320.0
+实际价值(没有20%的限制)(actualRealValue): 152320.0
+验车情况(vehicleCheckStatus): 2
+功率(power): 170.0
+车辆类型(vehicleType): K33
+发动机号(engineNo): 27294831756579
+车架号(frameNo): WDCGG8BB7BF617333
+VIN码(vinNo):
+车辆用途(vehiclePurpose): 01
+车辆用途（批改前）(vehiclePurposeBefore):
+行驶区域(runAreaCode): 02
+是否异形车(specialShapedInd): 0
+纯风险保费标志(pureRiskPremiumFlag):
+费改实际价值(consultActualValue): 152320.0
+整备质量(completeKerbMass): 0.0
+团车业务编号(groupCode):
+能源类型(powerType): 汽油
+车型新分类(newCarModel): 中型SUV
+生产国别(originCountry): 进口车
+交管车辆类型(vehicleCategory):
+交管车辆类型（批改前）(vehicleCategoryBefore):
+过户标志(chgOwnerFlag):
+过户标志（批改前）(chgOwnerFlagBefore):
+上年车牌号(lastLicensNo):
+品牌名称(carBrand): 梅赛德斯-奔驰
+产品组合(productCombination): 1
+投保习惯(insuredHabit): 1
+行驶里程(runMiles): 0.0
+*****  重载联网数据   *****
+驾驶行为全国评分(drivingBehaviorCountryScore):
+驾驶行为本省评分(drivingBehaviorProvinceScore):
+
+关联保单的被保车辆(subProposalVehicle): null
+投保人(applicant): *****  UWBOMApplicant  *****
+编码(appCode): I0807848128
+投保人名称(appName): 张珊珊
+投保人名称(批改前）(appNameBefore):
+类型(appType): 1
+类型(批改前）(appTypeBefore):
+账户名(accountName):
+账户号(accountCode):
+开户行(accountBank):
+证件号码(cardNo): 370502198911225228
+证件类型(cardType): 01
+出生日期(birthDate): 1989-11-22 00:00:00.0
+投保人与缴费人关系(paymentRelationCode): 01
+投保人地址(insuredAddress): 山东省
+
+被保险人(insured): *****  UWBOMInsured  *****
+姓名(insuredName): 张珊珊
+姓名（批改前）(insuredNameBefore):
+证件号码(cardNo): 370502198911225228
+证件类型(cardType): 01
+出生日期(birthDay): 1989-11-22 00:00:00.0
+是VIP客户(isVIP): false
+类型(insuredType): 1
+类型（批改前）(insuredTypeBefore):
+与车辆关系(insuredVehicleRelation):
+性质(insuredAttribute):
+单位性质(departmentAttribute):
+被保险人地址(insuredAddress): 山东省
+
+车主(vehicleOwner): *****  UWBOMVehicleOwner  *****
+车主名称(vehicleOwnerName): 张珊珊
+车主名称（批改前）(vehicleOwnerNameBefore):
+车主性质(vehicleOwnerCharacter): 01
+车主证件类型(vehicleOwnerCardType): 01
+车主证件号码(vehicleOwnerCardNo): 370502198911225228
+出生日期(birthDay): Wed Nov 22 00:00:00 CST 1989
+
+销售费用信息(sfList):
+        ****  UWBOMSalesFee  ****
+险别代码(riskCode):0801
+费用类型(feeType):220
+币别(currency):
+费用比例(feePercent):3.63
+规则Id(ruleId):
+业务分类(businessClass):
+费用金额(feeAmount):32.53
+
+        ****  UWBOMSalesFee  ****
+险别代码(riskCode):0801
+费用类型(feeType):317
+币别(currency):
+费用比例(feePercent):0.0
+规则Id(ruleId):
+业务分类(businessClass):
+费用金额(feeAmount):0.0
+
+        ****  UWBOMSalesFee  ****
+险别代码(riskCode):0801
+费用类型(feeType):306
+币别(currency):
+费用比例(feePercent):31.0
+规则Id(ruleId):
+业务分类(businessClass):
+费用金额(feeAmount):277.83
+
+        ****  UWBOMSalesFee  ****
+险别代码(riskCode):0801
+费用类型(feeType):313
+币别(currency):
+费用比例(feePercent):0.0
+规则Id(ruleId):
+业务分类(businessClass):
+费用金额(feeAmount):0.0
+
+        ****  UWBOMSalesFee  ****
+险别代码(riskCode):
+费用类型(feeType):303
+币别(currency):
+费用比例(feePercent):0.0
+规则Id(ruleId):
+业务分类(businessClass):
+费用金额(feeAmount):0.0
+
+        ****  UWBOMSalesFee  ****
+险别代码(riskCode):
+费用类型(feeType):314
+币别(currency):
+费用比例(feePercent):0.0
+规则Id(ruleId):
+业务分类(businessClass):
+费用金额(feeAmount):0.0
+
+险别列表(plans):
+        *****  UWBOMPlan  *****
+险别名称(kindName): 机动车交通事故责任强制险
+险别代码(kindCode): 0801BZ
+是附加险(isAdditionalPlan): false
+保额/限额(sumInsured): 122000.0
+是否投保不计免赔(isInsuredNoDeductiblePlan): false
+免赔额(deductible): 0.0
+投保座位数(insuredSeats): 0
+标准保费(benchmarkPremium): 950.0
+实交保费(grossPremium): 950.0
+折扣率(discount): 0.0
+投保档次(insureGrade): 1
+费率(rate): 0.0
+短期费率(shortRate): 100.0
+
+险别列表（批改前）(plansBefore):
+上年险别列表(lastPlans):
+驾驶人列表(driver):
+车船税信息(tax): *****  UWBOMTaxDto  *****
+缴费标志(taxPaidFlag): 02
+缴费标志-精友参考(taxPaidFlagRef): 0
+缴费标志-平台(taxPaidFlagCi): 2
+滞纳金(lateFee): 0.0
+税额合计(sumPayTax): 1800.0
+纳税人名称(taxpayerName): 张珊珊
+纳税人证件类型(taxpayerCardType):
+纳税人证件号码(taxpayerCardNo):
+纳税人识别码(taxpayerIdCode): 370502197606262829
+完税凭证号(paidFreeCertificate):
+
+整车库信息(vehicleReference): *****  UWBOMVehicleReference  *****
+车系名称(familyName): 奔驰GLK级
+厂牌型号代码(modelCode): BCI1503DGB
+厂牌型号名称(modelName): 奔驰BENZ GLK300越野车
+新车购置价(purchasePrice): 486291.0
+座位数(checkSeatCount): 5
+核定载质量(tonCount): 0.0
+车型推荐标志(modelFlag):
+
+新转续标识(newTransfer): 3
+行业车型编码(tradeModelCode):
+平台车型编码(platformModelCode):
+上年赔款记录(lastYearClaims): 2000.0
+业务员代码(salesmanCode): S000003336
+交强险信息(saliReference): *****  UWBOMSALI  *****
+浮动比率(floatingRateSALI): 1.0
+标准保费(benchmarkPremium): 950.0
+保费(grossPremium): 950.0
+
+不浮动原因(noAdjustReason):
+影像附件是否上传(isImageUpload): 未上传
+渠道类型(channelType): 0203
+渠道小类(channelTip): 02030101
+中介代码(intermediaryCode): 078000012892
+中介名称(intermediaryName): 华明保险代理有限公司辽宁分公司
+佣金类型0801(commissionType0801): 代理手续费
+佣金类型0812(commissionType0812):
+与往年车主姓名不一致(isCarOwnerName): true
+关联单标识(isRelation): false
+车型编码校验(carModelCodeValid):
+商业险纯风险保费-定价(baseDangerPremiumComm): 0.0
+交强险纯风险保费-定价(baseDangerPremiumSali): 609.95
+商业险精准费用率-定价(exactFeeComm): 0.0
+交强险精准费用率-定价(exactFeeSali): 4.0
+双录校验(doubleRecordValid):
+退款人名称(refundName):
+投保单特殊标识(proposalSpecialType): 00
+是否黑名单用户(isBlackListed):
+车系风险等级(carSystemRiskGrade): D类
+寿险业务员名称(outerUserCName):
+业务员名称(salesManCName): 宫敏
+销售人员名称(salesManSZCName):
+联系人名称(contactCName): 张珊珊
+折扣率(discount): 0.0
+保险期限(日)(insuranceDays): 365
+无理赔系数(noClaimFactor): 0.0
+优惠系数(FactorList):
+平台返回信息列表(insureDemand):
+优惠系数具体信息(rpList):
+寿险业务员(outerUserCName)：
+业务员(salesManCName)：宫敏
+销售人员名称(salesManSZCName)：
+联系人(contactCName)：张珊珊
+签单预期赔付率(issuePrepaidRate)：59.83
+新业务价值率(businessValueRate)：1.54
+特约列表(specialClauses):
+        *****  UWBOMSpecialClauses  *****
+险种代码(riskCode)：0801
+特别约定代码(clauseCode)：1001
+特别约定代码内容(clauseContext)：为更好地保障您的权益,请您在发生保险事故后保留出险第一现场,并立即致电24小时服务电话:4006695535。
+
+        *****  UWBOMSpecialClauses  *****
+险种代码(riskCode)：0801
+特别约定代码(clauseCode)：1061
+特别约定代码内容(clauseContext)：尊敬的客户：投保次日起，您可以通过本公司网站www.fundins.com、服务电话40066-95535或营业网点柜台查询保险单及理赔信息。若对查询结果有异议，可通过网上留言或拨打服务电话联系本公司。
+
+        *****  UWBOMSpecialClauses  *****
+险种代码(riskCode)：0801
+特别约定代码(clauseCode)：1062
+特别约定代码内容(clauseContext)：本保单为一次性打印，一经涂改或无 保险人 签章无效。
+
+        *****  UWBOMSpecialClauses  *****
+险种代码(riskCode)：0801
+特别约定代码(clauseCode)：1089
+特别约定代码内容(clauseContext)：本保险车辆的行驶证车主为：张珊珊，投保人为：张珊珊，与车主关系为：本人
+
+}
+2020-06-08 09:53:14,916  INFO  [ACTIVE] ExecuteThread: '1' for queue: 'weblogic.kernel.Default (self-tuning)' com.sinolife.sf.ruleengine.service.RuleExecutionControllerEjb3  [/172.27.1.150//sfilogrules/rpc/com.sinolife.rm.rmservice]  --executeRulesOnLocalEjbRuleSession--begin--/SFVUWRules/VUWRules
+2020-06-08 09:53:14,920  INFO  [ACTIVE] ExecuteThread: '1' for queue: 'weblogic.kernel.Default (self-tuning)' com.sinolife.sf.ruleengine.service.RuleExecutionControllerEjb3  [/172.27.1.150//sfilogrules/rpc/com.sinolife.rm.rmservice]  --executeRulesOnLocalEjbRuleSession--end--/SFVUWRules/VUWRules
+2020-06-08 09:53:14,920  INFO  [ACTIVE] ExecuteThread: '1' for queue: 'weblogic.kernel.Default (self-tuning)' com.sinolife.sf.ruleengine.service.impl.RuleEngineServiceImpl  [/172.27.1.150//sfilogrules/rpc/com.sinolife.rm.rmservice]  ----------cost:ms本
+次执行耗时=6毫秒
+2020-06-08 09:53:14,920  INFO  [ACTIVE] ExecuteThread: '1' for queue: 'weblogic.kernel.Default (self-tuning)' com.sinolife.sf.ruleengine.service.impl.RuleEngineServiceImpl  [/172.27.1.150//sfilogrules/rpc/com.sinolife.rm.rmservice]  ----rules  invoke return result---
+2020-06-08 09:53:14,920  INFO  [ACTIVE] ExecuteThread: '1' for queue: 'weblogic.kernel.Default (self-tuning)' com.sinolife.sf.ruleengine.service.impl.RuleEngineServiceImpl  [/172.27.1.150//sfilogrules/rpc/com.sinolife.rm.rmservice]  **********************  VUWBOMUnderwriteResultDto  **************************
+核保结果类型(resultType): 0
+核保级别(uwLevel): 0
+自主渠道系数(C25):0.0
+自主核保系数(C26):0.0
+临分标志(tempSeprate):0
+是简易赔案(simpleCaseInd):false
+自动核损匹配次数(evaluateCount):0
+RuleInfos(规则违反信息):;
+******  UWDTORuleInfo（规则具体违反信息）  ******
+核保级别(uwLevel):
+核保类型(resultType):99
+规则名称(ruleName):团车业务优先规则.08-辽宁.03-辽宁异地车单交
+违反信息(description):团车业务优先规则.08-辽宁.03-辽宁异地车单交
+附加信息(additionalInfo):
+自主渠道系数(C25):0.0
+自主核保系数(C26):0.0
+粗略费用率(fee):0.0
